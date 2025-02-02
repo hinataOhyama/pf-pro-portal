@@ -1,14 +1,14 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import NextAuth, { NextAuthConfig } from "next-auth";
-import { Adapter } from "next-auth/adapters";
+import getServerSession, { NextAuthOptions } from "next-auth";
 import { db } from "./db";
-import Google from "next-auth/providers/google";
-import GitHub from "next-auth/providers/github";
-import Apple from "next-auth/providers/apple";
-import Credentials from "next-auth/providers/credentials";
+import { Adapter } from "next-auth/adapters";
+import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
+import AppleProvider from "next-auth/providers/apple";
+import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-export const authConfig: NextAuthConfig = {
+export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
@@ -18,19 +18,19 @@ export const authConfig: NextAuthConfig = {
   },
   adapter: PrismaAdapter(db) as Adapter,
   providers: [
-    Google({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-    GitHub({
+    GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-    Apple({
+    AppleProvider({
       clientId: process.env.APPLE_CLIENT_ID!,
       clientSecret: process.env.APPLE_CLIENT_SECRET!,
     }),
-    Credentials({
+    CredentialsProvider({
       name: "credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "Username" },
@@ -56,7 +56,7 @@ export const authConfig: NextAuthConfig = {
           throw new Error("User was not found, Please enter valid email");
         }
         const passwordMatch = await bcrypt.compare(
-          credentials.password as string,
+          credentials.password,
           user.hashedPassword
         );
 
@@ -73,24 +73,14 @@ export const authConfig: NextAuthConfig = {
   secret: process.env.AUTH_SECRET,
   callbacks: {
     async session({ session, token }) {
-      const userToken = token as {
-        id: string;
-        name?: string;
-        email?: string;
-        picture?: string;
-        username?: string;
-        surname?: string;
-        completedOnboarding?: boolean;
-      };
-
       if (token) {
-        session.user.id = userToken.id;
-        session.user.name = userToken.name;
-        session.user.email = userToken.email ?? "";
-        session.user.image = userToken.picture;
-        session.user.username = userToken.username;
-        session.user.surname = userToken.surname;
-        session.user.completedOnboarding = !!userToken.completedOnboarding;
+        session.user.id = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
+        session.user.username = token.username;
+        session.user.surname = token.surname;
+        session.user.completedOnboarding = !!token.completedOnboarding;
       }
 
       const user = await db.user.findUnique({
@@ -129,4 +119,4 @@ export const authConfig: NextAuthConfig = {
   },
 };
 
-export const { handlers, signIn, signOut, auth } = NextAuth(authConfig);
+export const getAuthSession = () => getServerSession(authOptions);
