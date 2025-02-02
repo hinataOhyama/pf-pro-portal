@@ -8,6 +8,7 @@ import AppleProvider from "next-auth/providers/apple";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
+// TODO: integration v5-beta
 export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
