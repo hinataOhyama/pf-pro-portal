@@ -2,7 +2,14 @@ import type { NextConfig } from "next";
 import withNextIntl from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
+    ]
+  }
 };
 
 const nextIntl = withNextIntl("./i18n.ts");
