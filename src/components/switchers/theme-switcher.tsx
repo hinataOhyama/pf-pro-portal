@@ -26,7 +26,7 @@ type ThemeSwitcherProps = {
   alignDropdown?: "center" | "start" | "end";
 };
 
-const ThemeSwitcher = ({
+export const ThemeSwitcher = ({
   variant = "default",
   size = "default",
   alignHover = "center",
@@ -63,5 +63,3 @@ const ThemeSwitcher = ({
     </HoverCard>
   );
 };
-
-export default ThemeSwitcher;

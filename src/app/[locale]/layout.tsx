@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { AuthProvider } from "@/providers/auth-provider";
 import { Toaster } from "@/components/shadcn-ui/toaster";
 import { routing } from "@/lib/i18n";
+import { QueryProvider } from "@/providers/query-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,7 +25,7 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
-  
+
   const messages = await getMessages();
 
   return (
@@ -32,15 +33,17 @@ export default async function RootLayout({
       <body className="antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AuthProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Toaster />
-              {children}
-            </ThemeProvider>
+            <QueryProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <Toaster />
+                {children}
+              </ThemeProvider>
+            </QueryProvider>
           </AuthProvider>
         </NextIntlClientProvider>
       </body>

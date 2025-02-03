@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/shadcn-ui/dropdown-menu";
 import { Button } from "@/components/shadcn-ui/button";
-import { Loading } from "@/components/shadcn-ui/loading";
+import { Loading } from "@/components/ui/loading";
 import { useLocale, useTranslations } from "next-intl";
 import { HoverCard, HoverCardContent } from "@/components/shadcn-ui/hover-card";
 import { useChangeLocale } from "@/hooks/use-change-locale";
@@ -25,7 +25,7 @@ type LocaleSwitcherProps = {
   alignHover?: "center" | "start" | "end";
   alignDropdown?: "center" | "start" | "end";
   textSize?: "text-lg" | "text-base";
-}
+};
 
 export const LocaleSwitcher = ({
   size = "default",
@@ -50,11 +50,7 @@ export const LocaleSwitcher = ({
             size={size}
             className={textSize}
           >
-            {loading ? (
-              <Loading className="mr-0" />
-            ) : (
-              locale.toUpperCase()
-            )}
+            {loading ? <Loading className="mr-0" /> : locale.toUpperCase()}
             <span className="sr-only">{t("LANG_HOVER")}</span>
           </Button>
         </DropdownMenuTrigger>
