@@ -23,7 +23,7 @@ export default async function RootLayout({
   if (!isValidLocale) notFound();
 
   const messages = await getMessages({ locale });
-  
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={` antialiased`}>
