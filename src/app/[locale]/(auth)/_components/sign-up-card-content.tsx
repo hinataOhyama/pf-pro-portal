@@ -4,13 +4,22 @@ import { SignUpSchema, signUpSchema } from "@/schema/sign-up";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CardContent } from "@/components/shadcn-ui/card";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/shadcn-ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/shadcn-ui/form";
 import { SignInBtns } from "./sign-in-btns";
 import { useState } from "react";
 import { Input } from "@/components/shadcn-ui/input";
 import { Button } from "@/components/shadcn-ui/button";
 import { useTranslations } from "next-intl";
 import { Loading } from "@/components/shadcn-ui/loading";
+import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 export const SignUpCardContent = () => {
   const t = useTranslations("AUTH");
@@ -25,11 +34,59 @@ export const SignUpCardContent = () => {
     },
   });
   const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+  const router = useRouter();
+  
+  const onSubmit = async (data: SignUpSchema) => {
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) throw new Error("Something went wrong");
+      const signUpData = await res.json();
+
+      if (res.status === 200) {
+        toast({
+          title: s("SUCCESS.SIGN_UP"),
+        });
+        await signIn("credentials", {
+          email: data.email,
+          password: data.password,
+          redirect: false,
+        });
+        router.push("/");
+      } else throw new Error(signUpData);
+
+    } catch (err) {
+
+      let errMsg = s("ERRORS.DEFAULT");
+      if (typeof err === "string") {
+        errMsg = err;
+      } else if (err instanceof Error) {
+        errMsg = s(err.message);
+      }
+
+      toast({
+        title: errMsg,
+        variant: "destructive",
+      });
+
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <CardContent>
       <Form {...form}>
-        <form action="" className="space-y-7">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7">
           <SignInBtns disabled={loading} onLoading={setLoading} />
           <div className="space-y-1.5">
             <FormField
@@ -94,4 +151,4 @@ export const SignUpCardContent = () => {
       </Form>
     </CardContent>
   );
-}
+};
