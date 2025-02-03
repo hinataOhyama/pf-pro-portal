@@ -16,7 +16,7 @@ type AuthCardProps = {
 
 export const AuthCard = ({ signIn = false }: AuthCardProps) => {
   const t = useTranslations("AUTH");
-  
+
   return (
     <>
       <Card className="w-full sm:min-w-[28rem] sm:w-auto">
