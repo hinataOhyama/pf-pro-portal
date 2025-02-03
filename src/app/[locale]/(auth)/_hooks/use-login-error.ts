@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useToast } from "../../../../hooks/use-toast";
 import { useTranslations } from "next-intl";

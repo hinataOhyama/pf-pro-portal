@@ -1,13 +1,13 @@
 import { LocaleSwitcher } from "@/components/switchers/locale-switcher";
 import { ThemeSwitcher } from "@/components/switchers/theme-switcher";
 
-type AuthLayoutProps = {
+type OnboardingLayoutProps = {
   children: React.ReactNode;
 };
 
-const AuthLayout = ({ children }: AuthLayoutProps) => {
+const OnboardingLayout = ({ children }: OnboardingLayoutProps) => {
   return (
-    <main className="flex flex-col gap-3 justify-center items-center min-h-screen w-full p-4 md:p-6">
+    <main className="flex min-h-screen w-full">
       <div className="absolute top-0 left-0 w-full flex justify-end">
         <div className="flex items-center gap-2 max-w-7xl p-4 md:p-6">
           <LocaleSwitcher
@@ -29,4 +29,4 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
   );
 };
 
-export default AuthLayout;
+export default OnboardingLayout;

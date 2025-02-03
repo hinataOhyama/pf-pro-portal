@@ -1,7 +1,10 @@
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
+import scrollbar from "tailwind-scrollbar";
+import typography from "@tailwindcss/typography";
+import { withUt } from "uploadthing/tw";
 
-export default {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,6 +61,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
     },
-    plugins: [animate],
+    plugins: [animate, scrollbar, typography],
   },
-} satisfies Config;
+};
+
+export default withUt(config);

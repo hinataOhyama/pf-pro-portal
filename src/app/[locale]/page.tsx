@@ -1,14 +1,9 @@
-import ThemeSwitcher from "@/components/switchers/theme-switcher";
-import { useTranslations } from "next-intl";
+"use client";
 
-const Home = () => {
-  const t = useTranslations("Index");
-  return (
-    <div>
-      <h1>{t("title")}</h1>
-      <ThemeSwitcher />
-    </div>
-  );
+import { HomeContainer } from "./_components";
+
+const HomePage = () => {
+  return <HomeContainer />;
 };
 
-export default Home;
+export default HomePage;

@@ -16,9 +16,9 @@ import { useState } from "react";
 import { Input } from "@/components/shadcn-ui/input";
 import { Button } from "@/components/shadcn-ui/button";
 import { useTranslations } from "next-intl";
-import { Loading } from "@/components/shadcn-ui/loading";
+import { Loading } from "@/components/ui/loading";
 import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 import { signIn } from "next-auth/react";
 
 export const SignUpCardContent = () => {
@@ -36,7 +36,7 @@ export const SignUpCardContent = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
-  
+
   const onSubmit = async (data: SignUpSchema) => {
     try {
       setLoading(true);
@@ -63,9 +63,7 @@ export const SignUpCardContent = () => {
         });
         router.push("/");
       } else throw new Error(signUpData);
-
     } catch (err) {
-
       let errMsg = s("ERRORS.DEFAULT");
       if (typeof err === "string") {
         errMsg = err;
@@ -77,7 +75,6 @@ export const SignUpCardContent = () => {
         title: errMsg,
         variant: "destructive",
       });
-
     } finally {
       setLoading(false);
     }
