@@ -18,7 +18,7 @@ import { Button } from "@/components/shadcn-ui/button";
 import { useTranslations } from "next-intl";
 import { Loading } from "@/components/shadcn-ui/loading";
 import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/lib/i18n";
 import { signIn } from "next-auth/react";
 
 export const SignUpCardContent = () => {

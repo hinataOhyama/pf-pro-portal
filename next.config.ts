@@ -12,6 +12,6 @@ const nextConfig: NextConfig = {
   }
 };
 
-const nextIntl = withNextIntl("./i18n.ts");
+const nextIntl = withNextIntl("./src/lib/i18n.ts");
 
 module.exports = nextIntl(nextConfig);

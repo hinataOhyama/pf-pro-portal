@@ -1,0 +1,2 @@
+-- CreateEnum
+CREATE TYPE "UseCase" AS ENUM ('WORK', 'STUDY', 'PERSONAL_USE');

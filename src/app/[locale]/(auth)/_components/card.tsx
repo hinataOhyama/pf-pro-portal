@@ -6,7 +6,7 @@ import {
 } from "@/components/shadcn-ui/card";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 import { SignInCardContent } from "./sign-in-card-content";
 import { SignUpCardContent } from "./sign-up-card-content";
 

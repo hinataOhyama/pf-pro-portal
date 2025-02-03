@@ -72,3 +72,9 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
+
+enum UseCase {
+  WORK
+  STUDY
+  PERSONAL_USE
+}
