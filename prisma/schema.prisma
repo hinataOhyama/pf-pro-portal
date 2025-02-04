@@ -107,6 +107,10 @@ model Workspace {
   subscribers Subscription[]
   image String?
   color CustomColors @default(BLUE)
+  inviteCode String @unique 
+  adminCode String @unique 
+  canEditCode String @unique 
+  readOnlyCode String @unique 
 }
 
 enum CustomColors {

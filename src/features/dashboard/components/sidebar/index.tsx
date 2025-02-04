@@ -1,6 +1,6 @@
 import { getAuthSession } from "@/features/auth/lib";
 import { SidebarContainer } from "./container";
-import { getUserAdminWorkspaces, getWorkspaces } from "@/features/dashboard/lib/api";
+import { getUserAdminWorkspaces, getWorkspaces } from "@/features/dashboard/lib/workspace";
 
 export const Sidebar = async () => {
   const session = await getAuthSession();
