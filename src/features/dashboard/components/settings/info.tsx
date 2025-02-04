@@ -12,9 +12,9 @@ import {
 } from "@/components/shadcn-ui/form";
 import { useForm } from "react-hook-form";
 import {
-  settingsAccountSchema,
-  SettingsAccountSchema,
-} from "@/features/dashboard/schema/settings-account";
+  accountInfoSchema,
+  AccountInfoSchema,
+} from "@/features/dashboard/schema/account-info";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/shadcn-ui/input";
 import {
@@ -43,9 +43,9 @@ import { Loading } from "@/components/ui/loading";
 import { AddUserImage } from "@/features/onboarding/components/common/add-user-image";
 import { Session } from "@/features/onboarding/lib/check-completed";
 
-type AccountProps = {
+type AccountInfoProps = {
   session: Session;
-}
+};
 
 const languages = [
   {
@@ -58,17 +58,15 @@ const languages = [
   },
 ] as const;
 
-export const Account = ({
-  session,
-}: AccountProps) => {
+export const AccountInfo = ({ session }: AccountInfoProps) => {
   const t = useTranslations("SETTINGS");
   const m = useTranslations("MESSAGES");
   const lang = useLocale();
   const { toast } = useToast();
   const { update } = useSession();
   const router = useRouter();
-  const form = useForm<SettingsAccountSchema>({
-    resolver: zodResolver(settingsAccountSchema),
+  const form = useForm<AccountInfoSchema>({
+    resolver: zodResolver(accountInfoSchema),
     defaultValues: {
       username: session?.user.username ?? undefined,
       language: lang,
@@ -80,11 +78,11 @@ export const Account = ({
   const { onSelectChange } = useChangeLocale();
 
   const { mutate: editProfile, isPending } = useMutation({
-    mutationFn: async (updatedData: SettingsAccountSchema) => {
+    mutationFn: async (updatedData: AccountInfoSchema) => {
       const { data } = (await axios.post(
         "/api/profile/edit",
         updatedData
-      )) as AxiosResponse<SettingsAccountSchema>;
+      )) as AxiosResponse<AccountInfoSchema>;
 
       return data;
     },
@@ -96,7 +94,7 @@ export const Account = ({
         variant: "destructive",
       });
     },
-    onSuccess: async (res: SettingsAccountSchema) => {
+    onSuccess: async (res: AccountInfoSchema) => {
       if (res.language !== lang) onSelectChange(res.language as "te" | "en");
       await update();
       router.refresh();
@@ -104,7 +102,7 @@ export const Account = ({
     mutationKey: ["profileEdit"],
   });
 
-  const onSubmit = (data: SettingsAccountSchema) => {
+  const onSubmit = (data: AccountInfoSchema) => {
     editProfile(data);
   };
 

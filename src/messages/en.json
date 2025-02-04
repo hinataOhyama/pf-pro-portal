@@ -267,7 +267,8 @@
         "DESC": "You will loose access to all your workspaces and projects",
         "WARNING": "Account deletion is permanent and cannot be undone,click 'Delete my account' to delete your account.",
         "BUTTON": "DELETE MY ACCOUNT"
-      }
+      },
+      "NO_LANGUAGE": "No language found"
     },
     "THEME": {
       "ADD_TASK": "Add task",
@@ -278,9 +279,9 @@
       "DESC": "You can change your password here. Remember that it should contain atleast 6 characters, at least one upper and lower case letter and at least one number",
       "WARNING": {
         "FIRST": "The password can be changed",
-        "SECOND": "only for accounts created through the form on the site",
+        "SECOND": "only for accounts created through the form on the site. ",
         "THIRD": "If you have created an account via Google or Github button, ",
-        "FOURTH": "it is not possible to change the password",
+        "FOURTH": "it is not possible to change the password. ",
         "FIFTH": "due to another method of account authorization."
       },
       "FORM": {
