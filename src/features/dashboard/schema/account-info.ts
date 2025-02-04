@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const settingsAccountSchema = z.object({
+export const accountInfoSchema = z.object({
   username: z
     .string()
     .min(2, "SCHEMA.USERNAME.SHORT")
@@ -15,6 +15,4 @@ export const settingsAccountSchema = z.object({
   surname: z.string().optional(),
 });
 
-export type SettingsAccountSchema = z.infer<
-  typeof settingsAccountSchema
->;
+export type AccountInfoSchema = z.infer<typeof accountInfoSchema>;
