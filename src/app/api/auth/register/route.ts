@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { signUpSchema } from "@/schema/sign-up";
+import { signUpSchema } from "@/features/auth/schema/sign-up";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 

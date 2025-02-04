@@ -1,4 +1,4 @@
-import { AuthCard } from "@/app/[locale]/(auth)/_components/card";
+import { AuthCard } from "@/features/auth/components/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

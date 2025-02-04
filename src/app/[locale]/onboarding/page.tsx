@@ -1,7 +1,7 @@
-import { checkCompletedOnboarding } from "./_lib/check-completed";
-import { OnboardingFormProvider } from "./_context/form";
-import { AdditionalSection } from "./_components/additional-section";
-import { SummarySection } from "./_components/summary-section";
+import { checkCompletedOnboarding } from "../../../features/onboarding/lib/check-completed";
+import { OnboardingFormProvider } from "../../../features/onboarding/context/form";
+import { AdditionalSection } from "@/features/onboarding/components/section/additional-section";
+import { SummarySection } from "@/features/onboarding/components/section/summary-section";
 
 const OnboardingPage = async () => {
   const session = await checkCompletedOnboarding("/onboarding");

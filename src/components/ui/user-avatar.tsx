@@ -2,14 +2,14 @@ import { cn } from "@/lib/shadcn-utils";
 import { User } from "lucide-react";
 import Image from "next/image";
 
-interface Props {
+type UserAvatarProps = {
   size?: number;
   className?: string;
   profileImage?: string | null;
 }
 
 // TODO: avatar component
-export const UserAvatar = ({ className, profileImage, size = 16 }: Props) => {
+export const UserAvatar = ({ className, profileImage, size = 16 }: UserAvatarProps) => {
   return (
     <div
       className={cn(

@@ -1,4 +1,4 @@
-import { getAuthSession } from "@/app/[locale]/(auth)/_lib/auth";
+import { getAuthSession } from "@/features/auth/lib";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { z } from "zod";

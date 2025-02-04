@@ -1,9 +1,9 @@
 import { db } from "@/lib/db";
-import { onboardingSchema } from "@/schema/onboarding";
+import { onboardingSchema } from "@/features/onboarding/schema/onboarding";
 import { NextResponse } from "next/server";
 import { UseCase as UseCaseType } from "@prisma/client";
 import { getRandomWorkspaceColor } from "@/lib/get-random-workspace-color";
-import { getAuthSession } from "@/app/[locale]/(auth)/_lib/auth";
+import { getAuthSession } from "@/features/auth/lib";
 
 export async function POST(request: Request) {
   const session = await getAuthSession();

@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { MAX_FILE_SIZE, ACCEPTED_IMAGE_TYPES } from "./image";
+import {
+  MAX_FILE_SIZE,
+  ACCEPTED_IMAGE_TYPES,
+} from "../features/onboarding/schema/image";
 
 const file = z
   .any()
