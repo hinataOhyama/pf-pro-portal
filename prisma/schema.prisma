@@ -22,6 +22,10 @@ model User {
   createdWorkspaces Workspace[] @relation("CreatedBy")
   subscriptions Subscription[]
   useCase UseCase?
+  createdTasks Task[] @relation("TaskCreatedByUser")
+  updatedTasks Task[] @relation("TaskUpdatedByUser")
+  savedTask savedTask[]
+  assignedToTask assignedToTask[]
 }
  
 model Account {
@@ -111,6 +115,8 @@ model Workspace {
   adminCode String @unique 
   canEditCode String @unique 
   readOnlyCode String @unique 
+  tasks Task[]
+  tags Tag[]
 }
 
 enum CustomColors {
@@ -126,4 +132,59 @@ enum CustomColors {
   EMERALD
   INDIGO
   FUCHSIA
+}
+
+
+model Task {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  updatedBy User? @relation(name: "TaskUpdatedByUser",fields: [updatedUserId], references: [id], onDelete: Cascade)
+  updatedUserId String?
+  creator User @relation(name: "TaskCreatedByUser",fields: [creatorId], references: [id], onDelete: Cascade)
+  creatorId String
+  workspace Workspace @relation(fields: [workspaceId],references: [id], onDelete: Cascade)
+  workspaceId String
+  title String
+  emoji String @default("1f9e0")
+  content Json?
+  tags Tag[]
+  taskDate TaskDate? @relation(fields: [dateId],references: [id], onDelete: Cascade)
+  dateId String?
+  savedTask savedTask[]
+  assignedToTask assignedToTask[]
+}
+
+model savedTask {
+  id String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  task Task @relation(fields: [taskId] ,references: [id], onDelete: Cascade)
+  taskId String
+}
+
+model assignedToTask {
+  id String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  task Task @relation(fields: [taskId],references: [id], onDelete: Cascade)
+  taskId String
+}
+
+
+model Tag {
+  id String @id @default(cuid())
+  name String
+  tasks Task[]
+  color CustomColors
+  workspace Workspace? @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String
+  // mindMaps MindMap[]
+}
+
+model TaskDate {
+  id String @id @default(cuid())
+  from String?
+  to String?
+  Task Task[]
 }
