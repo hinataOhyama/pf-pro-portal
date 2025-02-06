@@ -1,4 +1,4 @@
-import SecurityPresentation from "@/features/dashboard/components/security/presentation";
+import SecurityPresentation from "@/features/dashboard/components/settings-security/presentation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 
 const SecuritySettingsPage = async () => {

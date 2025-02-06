@@ -1,48 +1,56 @@
 import React from 'react'
 import { DashboardHeader } from '../header'
+import { ExtendedWorkspace } from '../../types/workspace';
+import { UserPermission } from '@prisma/client';
 import { Session } from '@/features/onboarding/lib/check-completed';
-import { SettingsWorkspace, SubscriptionUser } from '@/features/dashboard/types';
-import { WorkspaceTab } from './tab';
-import { InviteUsers } from './invite-users';
+import { FilterByUsersAndTagsInWorkspaceProvider } from '../../context/filter-by-users-tags-in-workspace';
+import { InviteUsers } from '../settings-workspace/invite-users';
+import { TaskShortcut } from '../shortcut';
+import { ShortcutContainer } from './shortcuts';
+import { FilterContainer } from './filter';
+import { RecentActivityContainer } from './recentActivity';
+import { LeaveWorkspace } from './leave';
 
 type WorkspacePresentationProps = {
-  workspace: SettingsWorkspace;
-  user?: SubscriptionUser;
+  workspace: ExtendedWorkspace;
+  workspaceId: string;
+  userRole: UserPermission | null;
   session: Session;
 }
 
 const WorkspacePresentation = (
-  { workspace, user, session }: WorkspacePresentationProps
+  { workspace, workspaceId, userRole, session }: WorkspacePresentationProps
 ) => {
   return (
-    <>
-      <DashboardHeader
-        className="mb-2 sm:mb-0"
-        addManualRoutes={[
-          {
-            name: "DASHBOARD",
-            href: "/dashboard",
-            useTranslate: true,
-          },
-          {
-            name: "settings",
-            href: "/dashboard/settings",
-          },
-          {
-            name: workspace.name,
-            href: "/",
-          },
-        ]}
-      >
-        {(user?.userRole === "ADMIN" || user?.userRole === "OWNER") && (
-          <InviteUsers workspace={workspace} />
-        )}
-        {/* <AddTaskShortcut userId={session.user.id} /> */}
-      </DashboardHeader>
-      <main className="flex flex-col gap-2">
-        <WorkspaceTab workspace={workspace} workspaceId={workspace.id} />
-      </main>
-    </>
+    <FilterByUsersAndTagsInWorkspaceProvider>
+    <DashboardHeader
+      addManualRoutes={[
+        {
+          name: "DASHBOARD",
+          href: "/dashboard",
+          useTranslate: true,
+        },
+        {
+          name: workspace.name,
+          href: `/dashboard/workspace/${workspaceId}`,
+        },
+      ]}
+    >
+      {(userRole === "ADMIN" || userRole === "OWNER") && (
+        <InviteUsers workspace={workspace} />
+      )}
+      {userRole !== "OWNER" && <LeaveWorkspace workspace={workspace} />}
+      <TaskShortcut userId={session!.user.id} />
+    </DashboardHeader>
+    <main className="flex flex-col gap-2 w-full">
+      <ShortcutContainer workspace={workspace} userRole={userRole} />
+      <FilterContainer sessionUserId={session!.user.id} />
+      <RecentActivityContainer
+        userId={session!.user.id}
+        workspaceId={workspace.id}
+      />
+    </main>
+  </FilterByUsersAndTagsInWorkspaceProvider>
   )
 }
 

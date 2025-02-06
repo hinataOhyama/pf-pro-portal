@@ -1,4 +1,4 @@
-import { ThemePresentation } from "@/features/dashboard/components/theme/presentation";
+import { ThemePresentation } from "@/features/dashboard/components/settings-theme/presentation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 
 const ThemeSettingsPage = async () => {
