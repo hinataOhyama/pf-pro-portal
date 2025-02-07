@@ -1,10 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { LoadingState } from "@/components/ui/loadingState";
 import { UserPermission } from "@prisma/client";
 import { LucideIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/lib/i18n";
 
 interface Props {
   title: string;
@@ -13,12 +11,7 @@ interface Props {
   href: string;
 }
 
-export const ShortcutContainerLinkItem = ({
-  Icon,
-  title,
-  userRole,
-  href,
-}: Props) => {
+export const LinkItem = ({ Icon, title, userRole, href }: Props) => {
   return (
     <Link
       href={href}

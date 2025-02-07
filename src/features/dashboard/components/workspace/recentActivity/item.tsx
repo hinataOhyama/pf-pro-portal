@@ -1,16 +1,15 @@
 "use client";
 
-import { ReadOnlyEmoji } from "@/components/common/ReadOnlyEmoji";
-import { StarSvg } from "@/components/common/StarSvg";
-import { UserHoverInfo } from "@/components/common/UserHoverInfoCard";
-import { Card, CardContent } from "@/components/ui/card";
-import { useTruncateText } from "@/hooks/useTruncateText";
-import { WorkspaceRecentActivity } from "@/types/extended";
+import { ReadonlyEmoji } from "@/components/common/readonly-emoji";
+import { StarSvg } from "@/components/svg/star";
+import { HoverUserInfo } from "@/components/common/hover-user-info";
+import { Card, CardContent } from "@/components/shadcn-ui/card";
+import { useTruncateText } from "@/hooks/use-truncate-text";
+import { WorkspaceRecentActivity } from "@/features/dashboard/types/workspace";
 import { useFormatter, useTranslations } from "next-intl";
-import { useRouter } from "next-intl/client";
 import Link from "next/link";
-import { TagItem } from "./TagItem";
-import { AssignedToTaskUser } from "./AssignedToTaskUser";
+import { TagItem } from "./tag-item";
+import { AssignedToTaskUser } from "./assigned-to-task-user";
 
 interface Props {
   activity: WorkspaceRecentActivity;
@@ -19,8 +18,6 @@ interface Props {
 export const RecentActivityItem = ({
   activity: { tags, title, emoji, starred, type, updated, assignedTo, link },
 }: Props) => {
-  const router = useRouter();
-
   const truncatedTitle = useTruncateText(title, 40);
 
   const c = useTranslations("COMMON");
@@ -37,7 +34,7 @@ export const RecentActivityItem = ({
       <Card className="bg-background border-none hover:bg-accent transition-colors duration-200 p-2">
         <CardContent className="flex w-full justify-between sm:items-center p-2 sm:p-2 pt-0">
           <div className="flex flex-row sm:gap-4 gap-2 w-full">
-            <ReadOnlyEmoji
+            <ReadonlyEmoji
               className="sm:h-16 sm:w-16 h-12 w-12"
               selectedEmoji={emoji}
             />
@@ -56,7 +53,7 @@ export const RecentActivityItem = ({
                   {format.relativeTime(dateTime, now)}{" "}
                   {c("EDITED_ITEM_SENTENCE.BY")}
                   <div className="flex items-center gap-1">
-                    <UserHoverInfo className="px-0" user={updated.by} />
+                    <HoverUserInfo className="px-0" user={updated.by} />
                   </div>
                 </div>
               )}

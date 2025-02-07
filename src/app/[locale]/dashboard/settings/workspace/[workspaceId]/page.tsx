@@ -1,5 +1,5 @@
 import WorkspacePresentation from "@/features/dashboard/components/settings-workspace/presentation";
-import { getWorkspaceSettings } from "@/features/dashboard/lib/workspace";
+import { getWorkspaceSettings } from "@/features/dashboard/api/workspace";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import { notFound } from "next/navigation";
 

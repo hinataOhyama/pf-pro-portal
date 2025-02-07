@@ -1,38 +1,19 @@
 "use client";
 
-import { FilterUser, WorkspaceRecentActivity } from "@/types/extended";
+import { WorkspaceRecentActivity } from "@/features/dashboard/types/workspace";
 import { useQuery } from "@tanstack/react-query";
 import { RecentActivityItem } from "./item";
-import { Tag } from "@prisma/client";
 import { useEffect, useMemo, useState } from "react";
-import { useFilterByUsersAndTagsInWorkspace } from "@/context/FilterByUsersAndTagsInWorkspace";
-import { ClientError } from "@/components/error/ClientError";
-import { LoadingState } from "@/components/ui/loadingState";
-import { NoFilteredData } from "./NoFilteredData";
-import { NoData } from "./NoData";
+import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
+import { ClientError } from "@/components/error/client";
+import { Loading } from "@/components/ui/loading";
+import { NoFilteredData } from "./no-filtere-data";
+import { NoData } from "./no-data";
 import { useTranslations } from "next-intl";
 
 interface Props {
   userId: string;
   workspaceId: string;
-}
-
-function applyFilters(
-  data: WorkspaceRecentActivity[],
-  selectedTags: Tag[],
-  selectedUsers: FilterUser[]
-): WorkspaceRecentActivity[] {
-  return data.filter((activity) => {
-    const tagsMatch = selectedTags.every((tag) =>
-      activity.tags.some((activityTag) => activityTag.id === tag.id)
-    );
-
-    const usersMatch = selectedUsers.every((user) =>
-      activity.assignedTo.some((assignedUser) => assignedUser.id === user.id)
-    );
-
-    return tagsMatch && usersMatch;
-  });
 }
 
 export const RecentActivityContainer = ({ userId, workspaceId }: Props) => {
@@ -107,7 +88,7 @@ export const RecentActivityContainer = ({ userId, workspaceId }: Props) => {
       <div className="w-full flex flex-col gap-2">
         {isLoading ? (
           <div className="w-full flex items-center justify-center mt-20 sm:mt-32">
-            <LoadingState className="w-10 h-10 sm:h-11 sm:w-11" />
+            <Loading className="w-10 h-10 sm:h-11 sm:w-11" />
           </div>
         ) : recentActivity && recentActivity.length > 0 ? (
           activityItems && activityItems.length > 0 ? (

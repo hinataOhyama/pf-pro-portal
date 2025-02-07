@@ -26,6 +26,13 @@ model User {
   updatedTasks Task[] @relation("TaskUpdatedByUser")
   savedTask savedTask[]
   assignedToTask assignedToTask[]
+  createdMindMaps MindMap[] @relation("MindMapCreatedByUser")
+  updatedMindMaps MindMap[] @relation("MindMapUpdatedByUser")
+  savedMindMaps savedMindMaps[]
+  assignedToMindMap assignedToMindMap[]
+  messages Message[]
+  userNotifications Notification[] @relation("NotifyUser")
+  userCreatedNotifications Notification[] @relation("NotifyCreator")
 }
  
 model Account {
@@ -117,6 +124,9 @@ model Workspace {
   readOnlyCode String @unique 
   tasks Task[]
   tags Tag[]
+  mindMaps MindMap[]
+  conversation Conversation?
+  notification Notification[]
 }
 
 enum CustomColors {
@@ -179,7 +189,7 @@ model Tag {
   color CustomColors
   workspace Workspace? @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   workspaceId String
-  // mindMaps MindMap[]
+  mindMaps MindMap[]
 }
 
 model TaskDate {
@@ -187,4 +197,104 @@ model TaskDate {
   from String?
   to String?
   Task Task[]
+}
+
+model MindMap {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  updatedBy User? @relation(name: "MindMapUpdatedByUser", fields: [updatedUserId], references: [id], onDelete: Cascade)
+  creator User @relation(name: "MindMapCreatedByUser", fields: [creatorId], references: [id], onDelete: Cascade)
+  creatorId String
+  updatedUserId String?
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String
+  content Json?
+  title String
+  emoji String @default("1f9e0")
+  tags Tag[]
+  savedMindMaps savedMindMaps[]
+  assignedToMindMap assignedToMindMap[]
+
+  @@index([workspaceId])
+  @@index([updatedUserId])
+  @@index([creatorId])
+}
+
+model assignedToMindMap {
+  id String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  mindMap MindMap @relation(fields: [mindMapId],references: [id], onDelete: Cascade)
+  mindMapId String
+}
+
+model savedMindMaps {
+  id String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  mindMap MindMap @relation(fields: [mindMapId], references: [id], onDelete: Cascade)
+  mindMapId String
+}
+
+model Conversation {
+  id String @id @default(cuid())
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String @unique
+  messages Message[]
+}
+
+model Message {
+  id String @id @default(cuid())
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  conversationId String
+  sender User @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  senderId String
+  content String
+  createdAt DateTime @default(now())
+  additionalResources additionalResource[]
+  edited Boolean @default(false)
+  updatedAt DateTime? @updatedAt
+}
+
+model additionalResource{
+  id String @id @default(cuid())
+
+  message Message? @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  messageId String?
+  type AdditionalResourceTypes
+  name String
+  url String
+}
+
+enum AdditionalResourceTypes {
+  PDF
+  IMAGE
+}
+
+enum NotifyType {
+  NEW_USER_IN_WORKSPACE
+  USER_LEFT_WORKSPACE
+  NEW_TASK
+  NEW_MIND_MAP
+  NEW_ROLE
+  NEW_ASSIGNMENT_TASK
+  NEW_ASSIGNMENT_MIND_MAP
+}
+
+model Notification {
+  id String @id @default(cuid())
+  user User @relation(name: "NotifyUser", fields: [userId], references: [id] , onDelete: Cascade)
+  userId String
+  notifyCreator User @relation(name: "NotifyCreator", fields: [notifyCreatorId], references: [id], onDelete: Cascade)
+  notifyCreatorId String
+  workspace Workspace? @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspaceId String
+  seen Boolean @default(false)
+  clicked Boolean @default(false)
+  createdDate DateTime @default(now())
+  notifyType NotifyType
+  newUserRole UserPermission?
+  taskId String?
+  mindMapId String?
 }

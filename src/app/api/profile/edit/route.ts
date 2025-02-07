@@ -1,4 +1,4 @@
-import { getAuthSession } from "@/features/auth/lib/";
+import { getAuthSession } from "@/features/auth/lib";
 import { db } from "@/lib/db";
 import { accountInfoSchema } from "@/features/dashboard/schema/account-info";
 import { NextResponse } from "next/server";

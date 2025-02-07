@@ -10,7 +10,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { UploadFile } from "../common/upload-file";
-import { workspaceSchema, WorkspaceSchema } from "@/schema/workspace";
+import {
+  workspaceSchema,
+  WorkspaceSchema,
+} from "@/features/dashboard/schema/workspace";
 import { useOnboardingForm } from "../../context/form";
 import { useUploadThing } from "@/lib/uploadthing";
 import { useToast } from "@/hooks/use-toast";

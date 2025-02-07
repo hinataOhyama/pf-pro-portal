@@ -1,7 +1,7 @@
 import {
   getUserWorkspaceRole,
   getWorkspaceWithChatId,
-} from "@/features/dashboard/lib/workspace";
+} from "@/features/dashboard/api/workspace";
 import { notFound } from "next/navigation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import WorkspacePresentation from "@/features/dashboard/components/workspace/presentation";
@@ -28,7 +28,7 @@ const Workspace = async ({ params: { workspaceId } }: Params) => {
     <WorkspacePresentation
       workspace={workspace}
       workspaceId={workspaceId}
-      userRole={userRole} 
+      userRole={userRole}
       session={session}
     />
   );

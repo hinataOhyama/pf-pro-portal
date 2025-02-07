@@ -10,7 +10,10 @@ import {
   FormLabel,
 } from "@/components/shadcn-ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { workspaceEditData, WorkspaceEditData } from "@/schema/workspace";
+import {
+  workspaceEditData,
+  WorkspaceEditData,
+} from "@/features/dashboard/schema/workspace";
 import { SettingsWorkspace } from "@/features/dashboard/types/workspace";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CustomColors } from "@prisma/client";
