@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import { UseCase as UseCaseType } from "@prisma/client";
 import { getRandomWorkspaceColor } from "@/lib/get-random-workspace-color";
 import { getAuthSession } from "@/features/auth/lib";
+import { v4 as uuidv4 } from "uuid";
 
 export async function POST(request: Request) {
   const session = await getAuthSession();
@@ -56,6 +57,10 @@ export async function POST(request: Request) {
         creatorId: user.id,
         name: workspaceName,
         color: getRandomWorkspaceColor(),
+        inviteCode: uuidv4(),
+        adminCode: uuidv4(),
+        canEditCode: uuidv4(),
+        readOnlyCode: uuidv4(),
       },
     });
 
