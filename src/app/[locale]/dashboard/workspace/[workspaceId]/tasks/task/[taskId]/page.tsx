@@ -1,9 +1,9 @@
 import TaskDetailPresentation from "@/features/dashboard/components/task/presentation";
-import { getTask } from "@/features/dashboard/lib/task";
+import { getTask } from "@/features/dashboard/api/task";
 import {
   getUserWorkspaceRole,
   getWorkspace,
-} from "@/features/dashboard/lib/workspace";
+} from "@/features/dashboard/api/workspace";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import { notFound } from "next/navigation";
 
@@ -14,7 +14,9 @@ type TaskPageProps = {
   };
 };
 
-const TaskDetailPage = async ({ params: { workspaceId, taskId } }: TaskPageProps) => {
+const TaskDetailPage = async ({
+  params: { workspaceId, taskId },
+}: TaskPageProps) => {
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}/tasks/task/${taskId}`
   );

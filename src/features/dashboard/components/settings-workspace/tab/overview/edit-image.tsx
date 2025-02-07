@@ -14,7 +14,10 @@ import { Label } from "@/components/shadcn-ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useUploadThing } from "@/lib/uploadthing";
 import { cn } from "@/lib/shadcn-utils";
-import { workspacePicture, WorkspacePicture } from "@/schema/workspace";
+import {
+  workspacePicture,
+  WorkspacePicture,
+} from "@/features/dashboard/schema/workspace";
 import { SettingsWorkspace } from "@/features/dashboard/types/workspace";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CustomColors } from "@prisma/client";

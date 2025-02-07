@@ -1,7 +1,7 @@
 import { getAuthSession } from "@/features/auth/lib";
 import { db } from "@/lib/db";
 
-import { apiWorkspaceEditData } from "@/schema/workspace";
+import { apiWorkspaceEditData } from "@/features/dashboard/schema/workspace";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {

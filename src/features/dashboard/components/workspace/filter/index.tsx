@@ -1,12 +1,12 @@
 "use client";
 
-import { Clear } from "./Clear";
-import { Filter } from "./Filter";
+import { Clear } from "./clear";
+import { Filter } from "./filter";
 
-import { ActiveFilteredUser } from "./activeFilteredUsersAndTags/ActiveFilteredUser";
+import { ActiveFilteredUser } from "./active-filtered/user";
 
-import { ActiveFilteredTag } from "./activeFilteredUsersAndTags/ActiveFilteredTag";
-import { useFilterByUsersAndTagsInWorkspace } from "@/context/FilterByUsersAndTagsInWorkspace";
+import { ActiveFilteredTag } from "./active-filtered/tag";
+import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 
 interface Props {
   sessionUserId: string;

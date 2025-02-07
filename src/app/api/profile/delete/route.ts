@@ -1,4 +1,4 @@
-import { getAuthSession } from "@/features/auth/lib/";
+import { getAuthSession } from "@/features/auth/lib";
 import { db } from "@/lib/db";
 import { deleteAccountSchema } from "@/features/dashboard/schema/delete-account";
 import { NextResponse } from "next/server";

@@ -20,3 +20,12 @@ export type FilterUser = {
   username: string;
   image: string | null;
 }
+
+export type SubscriptionUser = {
+  userRole: UserPermission;
+  user: {
+    id: string;
+    image?: string | null;
+    username: string;
+  };
+};

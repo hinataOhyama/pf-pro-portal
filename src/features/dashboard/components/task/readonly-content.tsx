@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import { TaskOptions } from "./options";
 import { ReadonlyCalendar } from "./readonly-calendar";
-import { LinkTag } from "./editable/tag/LinkTag";
+import { LinkTag } from "../task-edit/link-tag";
 import { HoverUserInfo } from "@/components/common/hover-user-info";
 import { Separator } from "@/components/shadcn-ui/separator";
 import { AssignToTask } from "./assign-to-task";
@@ -18,9 +18,13 @@ type ReadonlyContentProps = {
   task: ExtendedTask;
   isSavedByUser: boolean;
   userRole: UserPermission | null;
-}
+};
 
-export const ReadonlyContent = ({ task, isSavedByUser, userRole }: ReadonlyContentProps) => {
+export const ReadonlyContent = ({
+  task,
+  isSavedByUser,
+  userRole,
+}: ReadonlyContentProps) => {
   const [isSaved, setIsSaved] = useState(isSavedByUser);
   const t = useTranslations("TASK.EDITOR.READ_ONLY");
   const [updater] = useState(task.updatedBy);
@@ -58,10 +62,7 @@ export const ReadonlyContent = ({ task, isSavedByUser, userRole }: ReadonlyConte
               </div>
             </div>
             <div className="w-full gap-1 flex flex-wrap flex-row">
-              <AssignToTask
-                taskId={task.id}
-                workspaceId={task.workspaceId}
-              />
+              <AssignToTask taskId={task.id} workspaceId={task.workspaceId} />
               <ReadonlyCalendar
                 from={task.taskDate?.from}
                 to={task.taskDate?.to}

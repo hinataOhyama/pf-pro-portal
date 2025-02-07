@@ -5,7 +5,7 @@ import { Workspace } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next-intl/client";
+import { useRouter } from "@/lib/i18n";
 import { useState } from "react";
 import {
   Dialog,
@@ -14,11 +14,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../../ui/dialog";
-import { Button } from "../../../ui/button";
+} from "@/components/shadcn-ui/dialog";
+import { Button } from "@/components/shadcn-ui/button";
 import { DoorOpen } from "lucide-react";
-import Warning from "../../../ui/warning";
-import { LoadingState } from "../../../ui/loadingState";
+import { Warning } from "@/components/ui/warning";
+import { Loading } from "@/components/ui/loading";
 
 interface Props {
   workspace: Workspace;
@@ -89,7 +89,7 @@ export const LeaveWorkspace = ({ workspace: { id, name } }: Props) => {
           className="flex gap-1 items-center"
         >
           {isPending ? (
-            <LoadingState loadingText={t("LOADING_BTN")} />
+            <Loading text={t("LOADING_BTN")} />
           ) : (
             <>
               <DoorOpen size={18} />

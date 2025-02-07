@@ -1,15 +1,15 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn-ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/shadcn-ui/dropdown-menu";
 import { FilterIcon } from "lucide-react";
-import { CommandContainer } from "./FilterCommand/CommandContainer";
+import { CommandContainer } from "./filter-command";
 
-import { LoadingState } from "@/components/ui/loadingState";
-import { ClientError } from "@/components/error/ClientError";
-import { useFilterByUsersAndTagsInWorkspace } from "@/context/FilterByUsersAndTagsInWorkspace";
+import { Loading } from "@/components/ui/loading";
+import { ClientError } from "@/components/error/client";
+import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -32,7 +32,7 @@ export const Filter = ({ sessionUserId }: Props) => {
       <DropdownMenuContent className="w-fit" align="start">
         {isLoading ? (
           <div className="h-16 flex items-center justify-center">
-            <LoadingState />
+            <Loading />
           </div>
         ) : isError ? (
           <ClientError
