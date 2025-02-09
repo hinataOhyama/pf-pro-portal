@@ -1,6 +1,8 @@
 import { Tag, Workspace } from "@prisma/client";
 import { SubscriptionUser, UserInfo } from "./info";
 import { AssignedItemType } from "./assigned-to";
+import { ShortTask } from "./task";
+import { ShortMindMap } from "./mind-map";
 
 export type SettingsWorkspace = {
   subscribers: SubscriptionUser[];
@@ -37,4 +39,9 @@ export type WorkspaceRecentActivity = {
   tags: Tag[];
   assignedTo: WorkspaceRecentActivityAssignedToItem[];
   link: string;
+}
+
+export interface WorkspaceShortcuts extends Workspace {
+  tasks: ShortTask[];
+  mindMaps: ShortMindMap[];
 }

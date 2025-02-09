@@ -1,6 +1,9 @@
 "use client";
 
-import { FilterUser, UserActiveItemList } from "@/features/dashboard/types/info";
+import {
+  FilterUser,
+  UserActiveItemList,
+} from "@/features/dashboard/types/info";
 import { Tag } from "@prisma/client";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useUserActivityStatus } from "./user-activity-status";
@@ -37,7 +40,7 @@ export const FilterByUsersAndTagsInWorkspaceProvider = ({
   const searchParams = useSearchParams();
 
   const tagIdParam = searchParams.get("tagId");
-  const workspaceId = params.workspace_id ? params.workspace_id : null;
+  const workspaceId = params.workspaceId ? params.workspaceId : null;
   const {
     allUsers,
     isLoading: isUsersLoading,

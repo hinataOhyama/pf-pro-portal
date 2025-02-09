@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 interface Params {
   params: {
-    workspace_id: string;
+    workspaceId: string;
   };
 }
 
 export const GET = async (
   request: Request,
-  { params: { workspace_id } }: Params
+  { params: { workspaceId } }: Params
 ) => {
   const url = new URL(request.url);
 
@@ -20,7 +20,7 @@ export const GET = async (
   try {
     const workspace = await db.workspace.findUnique({
       where: {
-        id: workspace_id,
+        id: workspaceId,
         subscribers: {
           some: {
             userId,

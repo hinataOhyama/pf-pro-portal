@@ -2,9 +2,9 @@ import { domain } from "@/constants/domain";
 import { notFound } from "next/navigation";
 import { ExtendedMindMap } from "../types/mind-map";
 
-export const getMindMap = async (mind_map_id: string, userId: string) => {
+export const getMindMap = async (mindMapId: string, userId: string) => {
   const res = await fetch(
-    `${domain}/api/mind_maps/get/details/${mind_map_id}?userId=${userId}`,
+    `${domain}/api/mind_maps/get/details/${mindMapId}?userId=${userId}`,
     {
       method: "GET",
       cache: "no-store",

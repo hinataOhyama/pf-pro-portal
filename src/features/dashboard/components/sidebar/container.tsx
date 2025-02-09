@@ -4,6 +4,7 @@ import { useToggleSidebar } from "@/features/dashboard/context/toggle-sidebar";
 import { ShortcutSidebar } from "./shortcut";
 import { CloseSidebar } from "./close";
 import { Workspace } from "@prisma/client";
+import { OptionsSidebar } from "./options";
 
 type SidebarContainerProps = {
   userWorkspaces: Workspace[];
@@ -14,7 +15,7 @@ type SidebarContainerProps = {
 export const SidebarContainer = ({
   userWorkspaces,
   userId,
-  // userAdminWorkspaces,
+  userAdminWorkspaces,
 }: SidebarContainerProps) => {
   const { isOpen, setIsOpen } = useToggleSidebar();
   const createdWorkspaces = userWorkspaces.filter(
@@ -30,6 +31,11 @@ export const SidebarContainer = ({
         <ShortcutSidebar
           userWorkspaces={userWorkspaces ? userWorkspaces : []}
           createdWorkspaces={createdWorkspaces.length}
+        />
+        <OptionsSidebar
+          createdWorkspaces={createdWorkspaces.length}
+          userAdminWorkspaces={userAdminWorkspaces}
+          userWorkspaces={userWorkspaces}
         />
         <CloseSidebar />
       </aside>

@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 interface Params {
   params: {
-    workspace_id: string;
+    workspaceId: string;
   };
 }
 
 export const GET = async (
   request: Request,
-  { params: { workspace_id } }: Params
+  { params: { workspaceId } }: Params
 ) => {
   const url = new URL(request.url);
 
@@ -20,7 +20,7 @@ export const GET = async (
   try {
     const workspace = await db.workspace.findUnique({
       where: {
-        id: workspace_id,
+        id: workspaceId,
         subscribers: {
           some: {
             userId,
@@ -28,19 +28,28 @@ export const GET = async (
         },
       },
       include: {
-        conversation: {
-          where: {
-            workspaceId: workspace_id,
-          },
+        subscribers: {
           select: {
-            id: true,
+            userRole: true,
+            user: {
+              select: {
+                id: true,
+                image: true,
+                username: true,
+              },
+            },
+          },
+          orderBy: {
+            user: {
+              surname: "desc",
+            },
           },
         },
       },
     });
 
     if (!workspace)
-      return NextResponse.json("Workspace not found", { status: 200 });
+      return NextResponse.json("Workspace not found", { status: 404 });
 
     return NextResponse.json(workspace, { status: 200 });
   } catch {

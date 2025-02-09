@@ -25,9 +25,9 @@ const Chat = async ({ params: { workspaceId, chatId } }: Params) => {
     getInitialMessages(session!.user.id, chatId),
   ]);
 
-  if (!workspace) return notFound();
+  if (!workspace || !workspace.conversation) return notFound();
 
-  const conversationId = workspace.conversation.id;
+  const conversationId = workspace.conversation?.id;
 
   if (conversationId !== chatId)
     redirect("/dashboard/errors?error=no-conversation");
