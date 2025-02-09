@@ -13,47 +13,35 @@ export type HomePageImage = {
 
 export const homePageMindMapsImgs: HomePageImage[] = [
   {
-    src: "/images/mindMapEditBlack.png",
+    src: "/images/mindMapBlack.png",
     alt: "MindMap Edit page - dark theme",
   },
   {
-    src: "/images/mindMapEditWhite.png",
+    src: "/images/mindMapWhite.png",
     alt: "MindMap Edit page - light theme",
   },
   {
-    src: "/images/mindMapPreviewBlack.png",
-    alt: "MindMap Preview page - dark theme",
+    src: "/images/mindMapBlack.png",
+    alt: "MindMap Edit page - dark theme",
   },
   {
-    src: "/images/mindMapEditEdgeOptionsBlack.png",
-    alt: "MindMap Edit Options page - dark theme",
-  },
-  {
-    src: "/images/mindMapEditTagsBlack.png",
-    alt: "MindMap Edit Tags page - light theme",
-  },
-  {
-    src: "/images/mindMapPreviewWhite.png",
-    alt: "MindMap Preview page - light theme",
+    src: "/images/mindMapWhite.png",
+    alt: "MindMap Edit page - light theme",
   },
 ];
 
 export const homePageTasksImgs: HomePageImage[] = [
   {
-    src: "/images/taskContentBlack.png",
+    src: "/images/taskWhite.png",
     alt: "Task Content page - dark theme",
   },
   {
-    src: "/images/taskContentEditorOptionsBlack.png",
-    alt: "Task Content editor options page - dark theme",
+    src: "/images/accountBlack.png",
+    alt: "Task Content page - dark theme",
   },
   {
-    src: "/images/taskContentAddImageByLinkBlack.png",
-    alt: "Task Content Add Image by link page - dark theme",
-  },
-  {
-    src: "/images/taskContentAddImageFromDeviceBlack.png",
-    alt: "Task Content Add Image from device page - dark theme",
+    src: "/images/accountWhite.png",
+    alt: "Task Content page - dark theme",
   },
 ];
 
@@ -133,24 +121,20 @@ export const homePageRolesAndSettingsImgs: HomePageImage[] = [
 
 export const homePageHeaderImgs: HomePageImage[] = [
   {
+    src: "/images/workspaceMainPageBlack.png",
+    alt: "Home page - dark theme",
+  },
+  {
+    src: "/images/workspaceMainPageWhite.png",
+    alt: "Home page - light theme",
+  },
+  {
     src: "/images/dashboardBlack.png",
     alt: "Home page - dark theme",
   },
   {
     src: "/images/dashboardWhite.png",
     alt: "Home page - light theme",
-  },
-  {
-    src: "/images/workspaceMainPage.png",
-    alt: "Workspace main page - dark theme",
-  },
-  {
-    src: "/images/workspaceMainPageFiltersBlack.png",
-    alt: "Workspace main page - dark theme",
-  },
-  {
-    src: "/images/workspaceMainPageFiltersWhite.png",
-    alt: "Workspace main page - light theme",
   },
 ];
 

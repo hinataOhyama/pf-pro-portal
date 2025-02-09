@@ -95,6 +95,11 @@
       },
       "LANGUAGE": "Please select a language",
       "CHOOSE_ONE": "Please select one of the options"
+    },
+    "Something": {
+      "went": {
+        "wrong": "Something went wrong. Please try again"
+      }
     }
   },
   "ONBOARDING_FORM": {

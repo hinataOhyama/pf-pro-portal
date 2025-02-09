@@ -1,7 +1,5 @@
 import {
-  homePageChatImgs,
   homePageMindMapsImgs,
-  homePageRolesAndSettingsImgs,
   homePageTasksImgs,
 } from "@/constants/home";
 import { Header } from "./header";
@@ -34,23 +32,6 @@ export const HomePresentation = () => {
             title="Tasks & Notes"
             desc="The Tasks feature provides a smooth environment for creating notes and organizing projects. With an enhanced editor and auto-save functionality, users can assign tasks, add categories, tag items, and set deadlines, all integrated seamlessly with the calendar for optimal organization."
             images={homePageTasksImgs}
-          />
-          <Section
-            id="Roles"
-            title="Roles & Permissions"
-            desc="ProPortal’s role management system simplifies workspace oversight. Admins and owners can adjust user roles, manage account and workspace settings, and oversee permissions to ensure smooth collaboration."
-            images={homePageRolesAndSettingsImgs}
-          />
-          <TextSection
-            title="The Future of Team Collaboration"
-            desc=" Effortlessly share projects and invite others to join with easy shareable links. ProPortal enables instant project review and real-time chatting with team members from anywhere."
-          />
-
-          <Section
-            id="Chat"
-            title="Chat & Alerts"
-            desc="Engage in real-time discussions, share files, and keep everyone informed with instant notifications so you’re always in sync with your team."
-            images={homePageChatImgs}
           />
         </main>
       </div>
