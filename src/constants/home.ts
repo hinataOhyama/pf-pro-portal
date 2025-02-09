@@ -6,7 +6,7 @@ import {
   Workflow,
 } from "lucide-react";
 
-export interface HomePageImage {
+export type HomePageImage = {
   src: string;
   alt: string;
 }

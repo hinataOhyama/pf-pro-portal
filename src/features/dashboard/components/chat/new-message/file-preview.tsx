@@ -13,7 +13,7 @@ import { FileText, Trash } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-interface Props {
+type FilePreviewProps = {
   file: AdditionalResource;
   onRemoveFile: (fileId: string) => void;
 }
@@ -21,7 +21,7 @@ interface Props {
 export const FilePreview = ({
   file: { name, type, url, id },
   onRemoveFile,
-}: Props) => {
+}: FilePreviewProps) => {
   const fileName = useTruncateText(name, 23);
   const t = useTranslations("CHAT.NEW_MESSAGE");
   return (
@@ -58,7 +58,7 @@ export const FilePreview = ({
             </Button>
           </HoverCardTrigger>
           <HoverCardContent align="center" side="top">
-            <span>{t("DELETE_ATACHMENT")}</span>
+            <span>{t("DELETE_ATTACHMENT")}</span>
           </HoverCardContent>
         </HoverCard>
       </div>

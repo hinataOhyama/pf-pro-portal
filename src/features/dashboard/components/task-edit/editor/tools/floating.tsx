@@ -14,11 +14,11 @@ import { useTranslations } from "next-intl";
 import { Separator } from "@/components/shadcn-ui/separator";
 import { AddImage } from "./add-image";
 
-interface Props {
+type FloatingContainerProps = {
   editor: Editor;
 }
 
-export const FloatingContainer = ({ editor }: Props) => {
+export const FloatingContainer = ({ editor }: FloatingContainerProps) => {
   const t = useTranslations("TASK.EDITOR.HOVER");
   return (
     <FloatingMenu

@@ -1,14 +1,14 @@
 import { MindMap, savedMindMaps, Tag } from "@prisma/client";
 import { UserInfo } from "./info";
 
-export interface ShortMindMap {
+export type ShortMindMap = {
   id: string;
   title: string;
-}
+};
 
-export interface ExtendedMindMap extends MindMap {
+export type ExtendedMindMap = {
   tags: Tag[];
   savedMindMaps?: savedMindMaps[];
   creator: UserInfo;
   updatedBy: UserInfo;
-}
+} & MindMap;

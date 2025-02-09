@@ -11,12 +11,12 @@ import { PermissionIndicator } from "./permission-indicator";
 import { LinkItem } from "./link-item";
 import { ExtendedWorkspace } from "@/features/dashboard/types/workspace";
 
-interface Props {
+type ShortcutContainerProps = {
   workspace: ExtendedWorkspace;
   userRole: UserPermission | null;
 }
 
-export const ShortcutContainer = ({ workspace, userRole }: Props) => {
+export const ShortcutContainer = ({ workspace, userRole }: ShortcutContainerProps) => {
   const { newTask, isPending: isNewTaskLoading } = useNewTask(workspace.id);
   const { newMindMap, isPending: isNewMindMapLoading } = useNewMindMap(
     workspace.id

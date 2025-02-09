@@ -54,7 +54,7 @@ const languages = [
   },
   {
     label: "Telugu",
-    value: "te",
+    value: "ja",
   },
 ] as const;
 
@@ -95,7 +95,7 @@ export const AccountInfo = ({ session }: AccountInfoProps) => {
       });
     },
     onSuccess: async (res: AccountInfoSchema) => {
-      if (res.language !== lang) onSelectChange(res.language as "te" | "en");
+      if (res.language !== lang) onSelectChange(res.language as "ja" | "en");
       await update();
       router.refresh();
     },

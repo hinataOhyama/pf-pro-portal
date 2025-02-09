@@ -3,7 +3,7 @@ import { UserInfo } from "./info";
 
 export type AssignedItemType = "task" | "mindMap";
 
-export interface AssignedToMindMapUser {
+export type AssignedToMindMapUser = {
   user: {
     id: string;
     image: string | null;
@@ -12,13 +12,13 @@ export interface AssignedToMindMapUser {
       userId: string;
     }[];
   };
-}
+};
 
-export interface UsersAssignedToMindMapInfo extends Workspace {
+export type UsersAssignedToMindMapInfo = {
   subscribers: AssignedToMindMapUser[];
-}
+} & Workspace;
 
-export interface AssignedToMeDataItem {
+export type AssignedToMeDataItem = {
   id: string;
   title: string;
   emoji: string;
@@ -34,7 +34,7 @@ export interface AssignedToMeDataItem {
   starred: boolean;
 }
 
-export interface AssignedToMeTaskAndMindMaps {
+export type AssignedToMeTaskAndMindMaps = {
   tasks: AssignedToMeDataItem[];
   mindMaps: AssignedToMeDataItem[];
 }

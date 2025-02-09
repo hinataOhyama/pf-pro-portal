@@ -50,7 +50,7 @@ const edgeTypes: EdgeTypes = {
   customStepRounded: CustomStepRounded,
 };
 
-interface Props {
+type MindMapProps = {
   initialInfo: ExtendedMindMap;
   workspaceId: string;
   canEdit: boolean;
@@ -62,7 +62,7 @@ export const MindMap = ({
   workspaceId,
   canEdit,
   initialActiveTags,
-}: Props) => {
+}: MindMapProps) => {
   const [clickedEdge, setClickedEdge] = useState<Edge | null>(null);
   const [openSheet, setOpenSheet] = useState(false);
   const [nodes, setNodes] = useState<Node[]>([]);

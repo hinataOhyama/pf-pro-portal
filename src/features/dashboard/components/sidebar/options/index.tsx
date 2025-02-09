@@ -8,7 +8,7 @@ import { WorkspaceOptions } from "./workspace";
 import { ScrollArea } from "@/components/shadcn-ui/scroll-area";
 import { AssignedToMeFilter } from "./assigned-to";
 
-interface Props {
+type OptionsSidebarProps = {
   createdWorkspaces: number;
   userAdminWorkspaces: Workspace[];
   userWorkspaces: Workspace[];
@@ -18,7 +18,7 @@ export const OptionsSidebar = ({
   createdWorkspaces,
   userAdminWorkspaces,
   userWorkspaces,
-}: Props) => {
+}: OptionsSidebarProps) => {
   const pathname = usePathname();
   if (pathname === "/dashboard") return null;
 

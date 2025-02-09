@@ -18,7 +18,7 @@ import { HoverUserInfo } from "@/components/common/hover-user-info";
 import { Separator } from "@/components/shadcn-ui/separator";
 import { AssignedToMindMapSelector } from "../assign-to-mind-map";
 
-interface Props {
+type MindMapPreviewCardWrapperProps = {
   mindMap: ExtendedMindMap;
   children: React.ReactNode;
   isSavedByUser: boolean;
@@ -30,7 +30,7 @@ export const MindMapPreviewCardWrapper = ({
   children,
   isSavedByUser,
   userRole,
-}: Props) => {
+}: MindMapPreviewCardWrapperProps) => {
   const [isSaved, setIsSaved] = useState(isSavedByUser);
 
   const t = useTranslations("MIND_MAP.PREVIEW");

@@ -7,16 +7,16 @@ import { useEffect, useMemo, useState } from "react";
 import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 import { ClientError } from "@/components/error/client";
 import { Loading } from "@/components/ui/loading";
-import { NoFilteredData } from "./no-filtere-data";
+import { NoFilteredData } from "./no-filter-data;
 import { NoData } from "./no-data";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type RecentActivityContainerProps = {
   userId: string;
   workspaceId: string;
 }
 
-export const RecentActivityContainer = ({ userId, workspaceId }: Props) => {
+export const RecentActivityContainer = ({ userId, workspaceId }: RecentActivityContainerProps) => {
   const t = useTranslations("WORKSPACE_MAIN_PAGE.RECENT_ACTIVITY");
   const {
     data: recentActivity,

@@ -12,11 +12,11 @@ import { ClientError } from "@/components/error/client";
 import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type FilterProps = {
   sessionUserId: string;
 }
 
-export const Filter = ({ sessionUserId }: Props) => {
+export const Filter = ({ sessionUserId }: FilterProps) => {
   const { isError, isLoading } = useFilterByUsersAndTagsInWorkspace();
   const t = useTranslations("WORKSPACE_MAIN_PAGE.FILTER");
   return (

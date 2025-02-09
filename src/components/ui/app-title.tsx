@@ -18,7 +18,7 @@ export const AppTitle = ({ className, hasLink }: AppTitleProps) => {
           )}
         >
           <h1>
-            Super <span className="text-primary font-semibold">Productive</span>
+            Pro <span className="text-primary font-semibold">Portal</span>
           </h1>
         </Link>
       ) : (
@@ -29,7 +29,7 @@ export const AppTitle = ({ className, hasLink }: AppTitleProps) => {
           )}
         >
           <h1>
-            Super <span className="text-primary font-semibold">Productive</span>
+            Pro <span className="text-primary font-semibold">Portal</span>
           </h1>
         </div>
       )}

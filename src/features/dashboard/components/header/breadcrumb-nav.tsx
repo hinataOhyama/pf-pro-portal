@@ -20,14 +20,17 @@ type BreadCrumbNavProps = {
     emoji?: string;
   }[];
   workspaceHref?: string;
-}
+};
 
-export const BreadcrumbNav = ({ addManualRoutes, workspaceHref }: BreadCrumbNavProps) => {
+export const BreadcrumbNav = ({
+  addManualRoutes,
+  workspaceHref,
+}: BreadCrumbNavProps) => {
   const paths = usePathname();
   const pathNames = paths
     .split("/")
     .filter(
-      (path) => path !== "te" && path !== "workspace" && path.trim() !== ""
+      (path) => path !== "ja" && path !== "workspace" && path.trim() !== ""
     );
   const t = useTranslations("ROUTES");
 

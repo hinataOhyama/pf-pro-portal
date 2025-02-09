@@ -24,11 +24,11 @@ const settingsFields = [
   },
 ];
 
-interface Props {
+type SettingsProps = {
   userAdminWorkspaces: Workspace[];
 }
 
-export const Settings = ({ userAdminWorkspaces }: Props) => {
+export const Settings = ({ userAdminWorkspaces }: SettingsProps) => {
   const t = useTranslations("SIDEBAR");
   return (
     <div className="flex flex-col gap-6 w-full">

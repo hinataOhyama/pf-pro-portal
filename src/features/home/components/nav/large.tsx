@@ -29,7 +29,7 @@ export const LargeNav = () => {
         >
           <AppleLogo className="w-10 h-10" />
           <p className="text-2xl font-semibold">
-            Super<span className="text-primary">Productive</span>
+            Pro<span className="text-primary">Portal</span>
           </p>
         </Button>
 

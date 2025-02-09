@@ -11,11 +11,11 @@ import { CommandTagItem } from "./tag";
 import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type CommandContainerProps = {
   sessionUserId: string;
 }
 
-export const CommandContainer = ({ sessionUserId }: Props) => {
+export const CommandContainer = ({ sessionUserId }: CommandContainerProps) => {
   const { allUsers, filterAssignedUsers, allTags, filterTags } =
     useFilterByUsersAndTagsInWorkspace();
 

@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import { MESSAGES_LIMIT } from "@/constants/chat";
 import { useMessage } from "@/store/chat/messages";
 
-interface Props {
+type ChatContainerProps = {
   chatId: string;
   initialMessages: ExtendedMessage[];
   sessionUserId: string;
@@ -19,7 +19,7 @@ export const ChatContainer = ({
   initialMessages,
   sessionUserId,
   workspaceName,
-}: Props) => {
+}: ChatContainerProps) => {
   const initState = useRef(false);
 
   const hasMore = initialMessages.length >= MESSAGES_LIMIT;

@@ -4,7 +4,7 @@ import { UserAvatar } from "@/components/ui/user-avatar";
 import { useTruncateText } from "@/hooks/use-truncate-text";
 import { WorkspaceRecentActivityAssignedToItem } from "@/features/dashboard/types/workspace";
 
-interface Props {
+type AssignedToTaskUserProps = {
   userInfo: WorkspaceRecentActivityAssignedToItem;
 }
 
@@ -12,7 +12,7 @@ export const AssignedToTaskUser = ({
   userInfo: {
     user: { image, username },
   },
-}: Props) => {
+}: AssignedToTaskUserProps) => {
   const name = useTruncateText(username, 25);
 
   return (

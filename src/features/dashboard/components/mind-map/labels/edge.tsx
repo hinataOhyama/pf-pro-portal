@@ -3,14 +3,14 @@ import { EdgeColor } from "@/types/enum";
 import { useMemo } from "react";
 import { EdgeLabelRenderer } from "reactflow";
 
-interface Props {
+type EdgeLabelProps = {
   label?: string;
   labelX: number;
   labelY: number;
   color: EdgeColor;
 }
 
-export const EdgeLabel = ({ labelX, labelY, label, color }: Props) => {
+export const EdgeLabel = ({ labelX, labelY, label, color }: EdgeLabelProps) => {
   const edgeColor = useMemo(() => {
     switch (color) {
       case EdgeColor.PURPLE:

@@ -13,7 +13,7 @@ import { useRouter } from "@/lib/i18n";
 import { CommandContainer } from "./command";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type AssignedToMindMapSelectorProps = {
   className?: string;
   plusIconSize?: number;
   dropdownSizeOffset?: number;
@@ -27,7 +27,7 @@ export const AssignedToMindMapSelector = ({
   plusIconSize = 16,
   mindMapId,
   workspaceId,
-}: Props) => {
+}: AssignedToMindMapSelectorProps) => {
   const t = useTranslations("MIND_MAP.ASSIGNMENT");
   const { data: assignedUsersInfo, isLoading: isLoadingInfo } = useQuery({
     queryFn: async () => {

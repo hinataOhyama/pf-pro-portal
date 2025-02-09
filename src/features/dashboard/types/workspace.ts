@@ -24,7 +24,7 @@ export type WorkspaceRecentActivityAssignedToItem = {
   userId: string;
   mindMapId?: string;
   taskId?: string;
-}
+};
 
 export type WorkspaceRecentActivity = {
   id: string;
@@ -39,9 +39,9 @@ export type WorkspaceRecentActivity = {
   tags: Tag[];
   assignedTo: WorkspaceRecentActivityAssignedToItem[];
   link: string;
-}
+};
 
-export interface WorkspaceShortcuts extends Workspace {
+export type WorkspaceShortcuts = {
   tasks: ShortTask[];
   mindMaps: ShortMindMap[];
-}
+} & Workspace;

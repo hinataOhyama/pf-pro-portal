@@ -1,0 +1,715 @@
+{
+  "Index": {
+    "title": "React-Intl サンプルへようこそ",
+    "subtitle": "これは React-Intl を使用してReactアプリケーションを国際化する簡単な例です。"
+  },
+  "AUTH": {
+    "EMAIL": "メールアドレス",
+    "PASSWORD": "パスワード",
+    "USERNAME": "ユーザー名",
+    "SIGN_IN": {
+      "TITLE": "ログイン",
+      "DESCRIPTION": "お帰りなさい....",
+      "SUBMIT_BTN": "ログイン",
+      "FORGOT_PASSWORD": "パスワードをお忘れですか？",
+      "DONT_HAVE_ACCOUNT": {
+        "FIRST": "アカウントをお持ちでないですか？",
+        "SECOND": "新規登録"
+      },
+      "PROVIDERS": {
+        "GOOGLE": "Googleでログイン",
+        "APPLE": "Appleでログイン",
+        "GITHUB": "Githubでログイン"
+      }
+    },
+    "SIGN_UP": {
+      "TITLE": "新規登録",
+      "DESCRIPTION": "アカウントを作成",
+      "SUBMIT_BTN": "新規登録",
+      "FORGOT_PASSWORD": "パスワードをお忘れですか？",
+      "HAVE_ACCOUNT": {
+        "FIRST": "すでにアカウントをお持ちですか？",
+        "SECOND": "ログイン"
+      },
+      "TERMS": {
+        "FIRST": "登録することで、以下に同意したことになります",
+        "SECOND": "利用規約"
+      },
+      "PROVIDERS": {
+        "GOOGLE": "Googleで新規登録",
+        "APPLE": "Appleで新規登録",
+        "GITHUB": "Githubで新規登録"
+      }
+    }
+  },
+  "MESSAGES": {
+    "ERRORS": {
+      "DEFAULT": "申し訳ありません...エラーが発生しました。もう一度お試しください",
+      "TAKEN_USERNAME": "このユーザー名は既に使用されています",
+      "TAKEN_EMAIL": "このメールアドレスは既に使用されています...",
+      "DB_ERROR": "現在問題が発生しています。後でもう一度お試しください",
+      "WRONG_DATA": "入力されたデータが正しくありません。正しいデータを入力してください。",
+      "NO_USER": "ユーザーが見つかりませんでした。有効なメールアドレスを入力してください",
+      "WRONG_PASSWORD": "入力されたパスワードが正しくありません。正しいパスワードを入力してください。",
+      "IMAGE_PROFILE_UPDATE": "プロフィール画像の更新に失敗しました。もう一度お試しください",
+      "IMAGE_PROFILE_DELETE": "プロフィール画像の削除に失敗しました。もう一度お試しください。",
+      "UPLOAD_FAILED": "ファイルのアップロードに失敗しました。もう一度お試しください。",
+      "WORKSPACE_ICON_ADDED": "ワークスペースアイコンの追加に失敗しました。もう一度お試しください",
+      "NO_USER_API": "ユーザーが見つかりません",
+      "UNAUTHORIZED": "認証されていません。ログインしてください！",
+      "TOO_MANY_WORKSPACES": "作成可能なワークスペース数の上限に達しました"
+    },
+    "SUCCESS": {
+      "SIGN_UP": "アカウントが作成されました！",
+      "SIGN_IN": "ログインしました！",
+      "IMAGE_PROFILE_UPDATE": "プロフィール画像が更新されました！",
+      "IMAGE_PROFILE_DELETE": "プロフィール画像が削除されました！",
+      "ONBOARDING_COMPLETE": "Pro Portalへようこそ！",
+      "PASSWORD_CHANGED": "パスワードが変更されました！",
+      "NEW_WORKSPACE": "ワークスペースが作成されました！",
+      "TASK_DELETED": "タスクが削除されました！",
+      "MIND_MAP_ADDED": "マインドマップが追加されました！"
+    },
+    "PENDING": {
+      "LOADING": "お待ちください"
+    },
+    "SCHEMA": {
+      "PASSWORD": {
+        "MIN": "パスワードは6文字以上である必要があります",
+        "UPPERCASE": "パスワードには大文字が1文字以上必要です",
+        "LOWERCASE": "パスワードには小文字が1文字以上必要です",
+        "DIGIT": "パスワードには数字が1文字以上必要です"
+      },
+      "EMAIL": "有効なメールアドレスを入力してください",
+      "USERNAME": {
+        "SHORT": "ユーザー名が短すぎます",
+        "SPECIAL_CHARS": "ユーザー名には文字と数字のみを使用できます"
+      },
+      "IMAGE": {
+        "MAX": "画像の最大サイズは5MBです",
+        "SUPPORTED": ".jpeg、.jpg、.png、.webp、.gif形式のみ対応しています"
+      },
+      "WORKSPACE": {
+        "SHORT": "ワークスペース名が短すぎます",
+        "SPECIAL_CHARS": "ワークスペース名には文字と数字のみを使用できます"
+      },
+      "LANGUAGE": "言語を選択してください",
+      "CHOOSE_ONE": "オプションの中から1つを選択してください"
+    }
+  },
+  "ONBOARDING_FORM": {
+    "FIRST_STEP": {
+      "TITLE": {
+        "FIRST": "準備を始めましょう",
+        "SECOND": "準備完了"
+      },
+      "PHOTO": "写真を追加",
+      "INPUTS": {
+        "NAME": "名",
+        "SURNAME": "姓"
+      },
+      "PLACEHOLDER": {
+        "NAME": "ヴィニース",
+        "SURNAME": "レディ"
+      }
+    },
+    "SECOND_STEP": {
+      "TITLE": "どのように使用しますか",
+      "INFO": "この情報はあなたの体験をパーソナライズするために使用されます",
+      "WORK": "仕事用",
+      "STUDY": "学習用",
+      "PERSONAL": "個人用"
+    },
+    "THIRD_STEP": {
+      "TITLE": "ワークスペースを作成",
+      "INPUTS": {
+        "NAME": "ワークスペース名",
+        "FILE": "ワークスペースアイコン（任意）"
+      },
+      "PLACEHOLDERS": {
+        "NAME": "例：Open Studio"
+      },
+      "IMAGE": ".jpeg、.jpg、.png、.webp、.gif形式のみ対応しています"
+    },
+    "FINISH": {
+      "TITLE": "これで完了です！",
+      "DESC_FIRST": "以下のボタンをクリックして",
+      "DESC_SECOND": "の使用を開始できます"
+    },
+    "START_BTN": "開始",
+    "NEXT_BTN": "続ける",
+    "IS_DONE": "もう少しお待ちください"
+  },
+  "COMMON": {
+    "WELCOME_BACK": "お帰りなさい",
+    "LANG_HOVER": "言語を変更",
+    "THEME_HOVER": "テーマを変更",
+    "DARK": "ダーク",
+    "LIGHT": "ライト",
+    "SYSTEM": "システム",
+    "LOG_OUT": "ログアウト",
+    "SETTINGS": "設定",
+    "WARNING": "警告",
+    "NOTICE": "お知らせ",
+    "DEFAULT_NAME": {
+      "MIND_MAP": "無題のマインドマップ",
+      "TASK": "無題のタスク"
+    },
+    "ACTIVE_WORKSPACES": {
+      "FIRST": "アクティブなワークスペース：",
+      "SECOND": "／",
+      "THIRD": "個"
+    },
+    "BACK_BTN": "戻る",
+    "SAVING_STATUS": {
+      "SAVED": "保存済み",
+      "SAVING": "保存中",
+      "UNSAVED": "未保存"
+    },
+    "TAG": {
+      "FILTER": "フィルター",
+      "NEW_TAG": "新規タグ",
+      "TAG": "タグ",
+      "ERROR": "申し訳ありません...エラーが発生しました",
+      "ERROR_BTN": "再試行",
+      "NOT_FOUND": "見つかりません",
+      "TAGS_HEADING": "タグ",
+      "NEW_HEADING": "新規",
+      "ADD_TAG": "タグを追加",
+      "COLORS": "色",
+      "TAG_NAME": "名前",
+      "BTNS": {
+        "CREATE": "作成",
+        "CANCEL": "キャンセル",
+        "DELETE": "削除",
+        "UPDATE": "更新"
+      }
+    },
+    "EDITED_ITEM_SENTENCE": {
+      "MIND_MAP": "マインドマップが編集されました",
+      "TASK": "タスクが編集されました",
+      "BY": "編集者：",
+      "IN": " - 場所："
+    }
+  },
+  "UPLOAD_FILE": {
+    "UPLOAD": "アップロード"
+  },
+  "CHANGE_PROFILE_IMAGE": {
+    "TITLE": "写真を送信！",
+    "BUTTON": "写真を選択",
+    "HOVER": "クリックしてプロフィール画像を変更"
+  },
+  "INVITE": {
+    "HINT": "ワークスペースに追加",
+    "INVITE": "招待",
+    "TITLE": "招待先：",
+    "DESC": "招待リンクをコピーして、このワークスペースに招待したい人に送信してください。役割を設定し、新しいリンクを生成することができます。"
+  },
+  "SIDEBAR": {
+    "MAIN": {
+      "HOME_HOVER": "ホーム",
+      "LOG_OUT_HOVER": "ログアウト",
+      "SETTINGS_HOVER": "設定",
+      "POMODORO_HOVER": "ポモドーロ",
+      "STARRED_HOVER": "スター付き",
+      "ASSIGNED_TO_ME_HOVER": "自分に割り当て済み",
+      "CALENDAR_HOVER": "カレンダー",
+      "NEW_WORKSPACE_HOVER": "新規ワークスペース",
+      "NEW_WORKSPACE_DIALOG_TITLE": "新規ワークスペースを作成",
+      "NEW_WORKSPACE_DIALOG_DESC": "テキスト"
+    },
+    "SETTINGS": {
+      "GENERAL": "一般",
+      "ACCOUNT": "アカウント",
+      "SECURITY": "セキュリティ",
+      "THEME": "テーマ",
+      "WORKSPACE": "ワークスペース"
+    },
+    "WORKSPACE_OPTIONS": {
+      "SHORTCUTS": "ショートカット",
+      "TASKS": "タスク",
+      "MIND_MAPS": "マインドマップ",
+      "SCHEDULES": "スケジュール",
+      "STUDY": "学習",
+      "FILES": "ファイル",
+      "DEFAULT_NAME": "無題",
+      "ACTIONS": "アクション",
+      "ADD_TASK": "タスクを追加",
+      "ADD_MIND_MAP": "マインドマップを追加"
+    }
+  },
+  "ROUTES": {
+    "DASHBOARD": "ホーム",
+    "SETTINGS": "設定",
+    "SECURITY": "セキュリティ",
+    "THEME": "テーマ",
+    "TASKS": "タスク",
+    "UNTITLED": "無題",
+    "POMODORO": "ポモドーロ",
+    "STARRED": "スター付き",
+    "ASSIGNED-TO-ME": "自分に割り当て済み"
+  },
+  "SETTINGS": {
+    "ACCOUNT": {
+      "TITLE": "アカウント",
+      "DESC": "Pro Portalアカウントを管理します。アカウントへの変更はすべてのワークスペースに適用されます。",
+      "IMAGE": "プロフィール画像",
+      "USERNAME": "ユーザー名",
+      "FIRST_NAME": "名（任意）",
+      "SURNAME": "姓（任意）",
+      "USERNAME_PLACEHOLDER": "ユーザー名",
+      "FIRST_NAME_PLACEHOLDER": "名",
+      "SURNAME_PLACEHOLDER": "姓",
+      "LANG": "言語",
+      "SEARCH_LANGUAGE": "言語を検索...",
+      "SELECT_LANGUAGE": "言語を選択",
+      "UPDATE_BTN": "更新",
+      "DELETE_TITLE": "アカウントを削除",
+      "DELETE_DESC": "アカウントとデータが削除されると、復元することはできません。",
+      "DELETE_LABEL": "アカウントとデータを削除",
+      "DELETE_PLACEHOLDER": "メールアドレスを確認",
+      "DELETE_BTN": "削除",
+      "DIALOG": {
+        "TITLE": "アカウントを削除",
+        "DESC": "すべてのワークスペースとプロジェクトへのアクセスが失われます",
+        "WARNING": "アカウントの削除は永続的で元に戻すことはできません。「アカウントを削除」をクリックしてアカウントを削除します。",
+        "BUTTON": "アカウントを削除"
+      },
+      "NO_LANGUAGE": "言語が見つかりません"
+    },
+    "THEME": {
+      "ADD_TASK": "タスクを追加",
+      "ADD_TASK_PENDING": "タスクを作成中"
+    },
+    "SECURITY": {
+      "TITLE": "セキュリティ",
+      "DESC": "ここでパスワードを変更できます。パスワードは6文字以上で、大文字と小文字をそれぞれ1文字以上、数字を1文字以上含める必要があります",
+      "WARNING": {
+        "FIRST": "パスワードの変更は",
+        "SECOND": "サイト上のフォームで作成されたアカウントのみ可能です。",
+        "THIRD": "GoogleやGithubボタンでアカウントを作成した場合、",
+        "FOURTH": "パスワードの変更はできません。",
+        "FIFTH": "これは異なる認証方式を使用しているためです。"
+      },
+      "FORM": {
+        "CURRENT": {
+          "LABEL": "現在のパスワード",
+          "PLACEHOLDER": "現在のパスワード"
+        },
+        "NEW": {
+          "LABEL": "新しいパスワード",
+          "PLACEHOLDER": "新しいパスワード"
+        },
+        "REPEAT": {
+          "LABEL": "パスワードの確認",
+          "PLACEHOLDER": "パスワードの確認"
+        },
+        "BTN": "パスワードを変更",
+        "BTN_PENDING": "パスワードを変更中"
+      }
+    }
+  },
+  "LEAVE_FROM_WORKSPACE": {
+    "LEAVE": "退出",
+    "TITLE": "退出",
+    "DESC": "いつでもワークスペースを退出でき、再度招待されれば戻ることができます。",
+    "WARNING": "このワークスペースから「スター付き」タブに追加されたすべてのタスクとマインドマップが削除されます。また、あなたに割り当てられたアクティビティについても同様です。",
+    "LOADING_BTN": "退出中です。お待ちください"
+  },
+  "PERMISSIONS": {
+    "WAIT": "お待ちください",
+    "PERMISSIONS": "権限",
+    "COPY": "リンクをコピー",
+    "OWNER": {
+      "TITLE": "オーナー"
+    },
+    "ADMIN": {
+      "TITLE": "管理者",
+      "DESC": "ワークスペースの設定変更や他のユーザーの管理を含む、すべての権限を持っています。"
+    },
+    "EDITOR": {
+      "TITLE": "編集者",
+      "DESC": "ワークスペースへの完全なアクセス権を持ち、コンテンツの編集と削除が可能です。ただし、エリアの設定にはアクセスできません。"
+    },
+    "VIEWER": {
+      "TITLE": "閲覧者",
+      "DESC": "ワークスペースへの完全なアクセス権を持ちますが、編集や削除はできません。また、エリアの設定にもアクセスできません。"
+    }
+  },
+  "TASK": {
+    "HEADER": {
+      "PLACEHOLDER": "無題のタスク",
+      "DATE": {
+        "PICK": "日付を選択",
+        "INFO": "日付を選択すると、タスクがカレンダーに追加されます"
+      },
+      "TAG": {
+        "FILTER": "フィルター",
+        "NEW_TAG": "新規タグ",
+        "TAG": "タグ",
+        "ERROR": "申し訳ありません...エラーが発生しました",
+        "ERROR_BTN": "再試行",
+        "NOT_FOUND": "見つかりません",
+        "TAGS_HEADING": "タグ",
+        "NEW_HEADING": "新規",
+        "ADD_TAG": "タグを追加",
+        "COLORS": "色",
+        "TAG_NAME": "名前",
+        "BTNS": {
+          "CREATE": "作成",
+          "CANCEL": "キャンセル",
+          "DELETE": "削除",
+          "UPDATE": "更新"
+        }
+      }
+    },
+    "EDITOR": {
+      "PLACEHOLDER": "何か素晴らしいことを書いてください 📝",
+      "WORDS": "単語数：",
+      "CHARS": "文字",
+      "IMAGE": {
+        "TITLE": "画像を追加",
+        "DESC": "リンクを提供して写真を追加するか、デバイスからインポートできます。",
+        "LINK": "リンクで追加",
+        "UPLOAD": "デバイスからインポート",
+        "LINK_TAB": {
+          "PLACEHOLDER": "写真のリンク",
+          "BTN_ADD": "画像を追加",
+          "BTN_PENDING": "リンクを確認中"
+        },
+        "UPLOAD_TAB": {
+          "TYPES": ".jpeg、.jpg、.png、.webp、.gif形式のみ許可されています",
+          "BTN_ADD": "画像を追加",
+          "BTN_PENDING": "追加中"
+        }
+      },
+      "HOVER": {
+        "H1": "見出し1",
+        "H2": "見出し2",
+        "H3": "見出し3",
+        "H4": "見出し4",
+        "H5": "見出し5",
+        "H6": "見出し6",
+        "BOLD": "太字",
+        "ITALIC": "斜体",
+        "STRIKETHROUGH": "取り消し線",
+        "UNDERLINE": "下線",
+        "CODE": "コード",
+        "UL": "箇条書き",
+        "OL": "番号付きリスト",
+        "LINK": "ハイパーリンクを追加",
+        "IMAGE": "画像を追加",
+        "COLOR": "ハイライト",
+        "COLOR_DEFAULT": "デフォルトの色",
+        "UNDO": "元に戻す",
+        "REDO": "やり直し",
+        "DELETE": "削除"
+      },
+      "READ_ONLY": {
+        "NO_DATE": "カレンダーに記録なし",
+        "NO_TITLE": "無題のタスク",
+        "NO_CONTENT": "内容のないタスク",
+        "DELETE": "削除",
+        "EDIT": "編集",
+        "ADD_TO_FAV": "お気に入りに追加",
+        "REMOVE_FROM_FAV": "お気に入りから削除",
+        "CREATOR_INFO": "作成者：",
+        "EDITOR_INFO": "編集者：",
+        "DIALOG": {
+          "TITLE": "タスクを削除",
+          "DESC": "このノートを削除してもよろしいですか？含まれるすべてのデータと関連するアクティビティが失われます。削除は元に戻せません",
+          "BTN_DELETE": "タスクを削除",
+          "BTN_PENDING": "削除中"
+        }
+      }
+    },
+    "BTN": {
+      "SAVE_TASK": "タスクを追加"
+    },
+    "ASSIGNMENT": {
+      "TRIGGER": "割り当て",
+      "ERROR_MSG": "エラーが発生しました。もう一度お試しください",
+      "ERROR_BTN": "再試行",
+      "PLACEHOLDER": "フィルター",
+      "NOT_FOUND": "ユーザーが見つかりません",
+      "HEADING": "割り当て先"
+    },
+    "CREATOR_INFO": "作成者：",
+    "EDITOR_INFO": "編集者："
+  },
+  "MIND_MAP": {
+    "HOVER_TIP": {
+      "ADD_TITLE": "新しいタイトルを追加",
+      "SAVE": "マインドマップを保存"
+    },
+    "TAG": "マインドマップにタグを追加",
+    "DELETE": {
+      "MESSAGE": {
+        "SUCCESS": "リセットが成功しました",
+        "ERROR": "変更の保存に失敗しました。"
+      },
+      "HOVER": "すべてのタイルを削除",
+      "DIALOG": {
+        "TITLE": "すべてのタイルを削除",
+        "DESC": "マインドマップのレイアウトを初期状態にリセット",
+        "WARNING": "初期状態に戻すと、現在のすべてのタイルと接続が削除されます。「状態をリセット」をクリックしてすべてのタイルと接続を削除します。",
+        "BTN_RESET": "状態をリセット",
+        "BTN_PENDING": "リセット中"
+      }
+    },
+    "EDGE_OPTIONS": {
+      "TITLE": "接続設定",
+      "DESC": "接続の外観をカスタマイズします。テキストを追加し、接続タイプを設定し、色を変更し、アニメーション化するかどうかを選択できます！",
+      "FORM": {
+        "LABEL": {
+          "LABEL": "ラベル",
+          "DESC": "テキストを追加するとラベルが表示されます。フィールドを空にして変更を保存するとラベルが削除されます。",
+          "PLACEHOLDER": "ラベルを追加"
+        },
+        "TYPE": {
+          "LABEL": "接続タイプ",
+          "DEFAULT": "デフォルト",
+          "STRAIGHT": "直線",
+          "STEP_SHARP": "ステップ",
+          "STEP_ROUNDED": "ステップ（角丸）",
+          "DESC": "接続の動作を選択"
+        },
+        "COLOR": {
+          "LABEL": "色",
+          "DESC": "色の選択はラベルにのみ影響します"
+        },
+        "ANIMATED": {
+          "LABEL": "接続をアニメーション化"
+        },
+        "BTN_SAVE": "保存",
+        "BTN_DELETE_EDGE": "接続を削除"
+      }
+    },
+    "NODE": {
+      "EDIT": "編集",
+      "COLOR": "色",
+      "DELETE": "削除",
+      "SAVE": "変更を保存",
+      "CANCEL": "キャンセル",
+      "PLACEHOLDER": "新しい説明を追加"
+    },
+    "EDIT_TITLE_AND_EMOJI": {
+      "ERROR": "変更の保存に失敗しました。",
+      "HOVER": "情報を編集",
+      "TITLE": "情報を編集",
+      "DESC": "マインドマップの名前を変更し、アイコンを設定します",
+      "PLACEHOLDER": "無題のマインドマップ",
+      "SAVE": "保存",
+      "CANCEL": "キャンセル"
+    },
+    "PREVIEW": {
+      "INFO": "これはプレビューページです。マップスペースを移動できますが、編集するには編集ページに移動してください（必要な権限がある場合）。",
+      "NO_TITLE": "無題のマインドマップ",
+      "DELETE": "削除",
+      "EDIT": "編集",
+      "ADD_TO_FAV": "お気に入りに追加",
+      "REMOVE_FROM_FAV": "お気に入りから削除",
+      "DIALOG": {
+        "TITLE": "マインドマップを削除",
+        "DESC": "マインドマップを削除してもよろしいですか？すべてのデータと関連するアクションが失われます。削除は元に戻せません。",
+        "BTN_DELETE": "削除",
+        "BTN_PENDING": "削除中"
+      },
+      "CREATOR_INFO": "作成者：",
+      "EDITOR_INFO": "編集者："
+    },
+    "ASSIGNMENT": {
+      "TRIGGER": "割り当て",
+      "ERROR_MSG": "エラーが発生しました。もう一度お試しください",
+      "ERROR_BTN": "再試行",
+      "PLACEHOLDER": "フィルター",
+      "NOT_FOUND": "ユーザーが見つかりません",
+      "HEADING": "割り当て先"
+    }
+  },
+  "TASK_SHORTCUT": {
+    "TITLE": "タスクを作成",
+    "HINT": "クイック追加",
+    "ADDED_TASK": "タスクがプロジェクトに追加されました！タスクを表示",
+    "CHOOSE_WORKSPACE": "ワークスペースを選択",
+    "DESC": "所属していて必要な権限を持っている選択したワークスペースにタスクを追加",
+    "BTN_ADD": "ワークスペースに追加",
+    "BTN_NO_WORKSPACES": "理解しました",
+    "BTN_PENDING": "追加中です。お待ちください",
+    "DUE_DATE": "期限",
+    "MAIN_TAB": {
+      "PLACEHOLDER": "タイトルを追加",
+      "WORKSPACE": "ワークスペース",
+      "WARNING": "タスクを追加できるワークスペースがまだありません。新しいワークスペースを作成するか、「編集者」以上の権限を持つ既存のワークスペースに参加してください。"
+    }
+  },
+  "PERMISSION_INDICATOR": {
+    "TITLE": "現在のあなたの役割は",
+    "DESC": "ワークスペース {workspace} におけるあなたの権限は現在",
+    "ROLES": {
+      "OWNER": "オーナー",
+      "ADMIN": "管理者",
+      "CAN_EDIT": "編集者",
+      "READ_ONLY": "閲覧者"
+    },
+    "HINT": "{workspace} における権限は",
+    "ROLES_DESC": {
+      "OWNER": "オーナーとして、あなたはすべての権利を持っています。コンテンツ、他のユーザーの管理、ワークスペース設定のカスタマイズが可能です。ただし、オーナーはこのワークスペースから離れることはできず、設定で完全に削除するしかありません。",
+      "ADMIN": "管理者として、あなたはワークスペースの設定変更や他のユーザーの管理など、すべての権利を持っています。",
+      "CAN_EDIT": "編集者として、あなたはワークスペースへのフルアクセス権を持ち、ワークスペース内のコンテンツの編集と削除を行うことができます。ただし、ワークスペースの設定にはアクセスできません。",
+      "READ_ONLY": "閲覧者として、あなたはワークスペースへのフルアクセス権を持っていますが、コンテンツの編集権限はありません。ワークスペースの設定にもアクセスできません。"
+    },
+    "BTN": "承知しました"
+  },
+  "USERS_STATUS_LIST": {
+    "ROLES": {
+      "OWNER": "オーナー",
+      "ADMIN": "管理者",
+      "CAN_EDIT": "編集者",
+      "READ_ONLY": "閲覧者",
+      "UNAVAILABLE": "利用不可"
+    },
+    "ERROR": {
+      "MG": "ワークスペースメンバー情報の取得に失敗しました",
+      "BTN": "再試行"
+    }
+  },
+  "NOTIFICATIONS": {
+    "TITLE": "お知らせ",
+    "MARK_AS_READ": "すべて既読にする",
+    "NO_NOTIFICATIONS": "まだお知らせはありません",
+    "ERROR": "お知らせの取得中にエラーが発生しました",
+    "NOTIFY_ITEM": {
+      "ROLES": {
+        "ADMIN": "管理者",
+        "CAN_EDIT": "編集者",
+        "READ_ONLY": "閲覧者"
+      },
+      "NEW_USER_IN_WORKSPACE_TEXT": "さんがワークスペース {name} に参加しました",
+      "USER_LEFT_WORKSPACE_TEXT": "さんがワークスペース {name} を退室しました",
+      "NEW_TASK_TEXT": "さんがワークスペース {name} に新しいタスクを追加しました",
+      "NEW_MIND_MAP_TEXT": "さんがワークスペース {name} に新しいマインドマップを追加しました",
+      "NEW_ROLE_TEXT": "あなたはワークスペース {name} で {role} レベルの権限を付与されました",
+      "NEW_ASSIGNMENT_TASK_TEXT": "あなたはワークスペース {name} でタスクに割り当てられました",
+      "NEW_ASSIGNMENT_MIND_MAP_TEXT": "あなたはワークスペース {name} でマインドマップに割り当てられました"
+    }
+  },
+  "WORKSPACE_MAIN_PAGE": {
+    "FILTER": {
+      "FILTER_BTN": "フィルター",
+      "CLEAR_BTN": "クリア"
+    },
+    "COMMAND": {
+      "SEARCH": "検索",
+      "NO_RESULTS_FOUND": "結果が見つかりませんでした",
+      "ASSIGNED_TO": "担当者",
+      "TAG": "タグ",
+      "ASSIGNED_TO_ME": "自分に割り当てられたタスク"
+    },
+    "RECENT_ACTIVITY": {
+      "NO_FILTERED_DATA": "指定された条件に一致するタスクとマインドマップはありません",
+      "ERROR": "最近のワークスペースアクティビティデータの取得に失敗しました",
+      "NO_DATA": "アクティビティが見つかりません。最初のタスクとマインドマップを作成しましょう！"
+    },
+    "SHORTCUT_CONTAINER": {
+      "GROUP_CHAT": "グループチャット",
+      "PRIVATE_CHAT": "プライベートチャット",
+      "NEW_TASK": "新しいタスク",
+      "NEW_MIND_MAP": "新しいマインドマップ"
+    }
+  },
+  "CHAT": {
+    "NO_MESSAGES": {
+      "FIRST": "このチャットにはメッセージが見つかりませんでした。",
+      "SECOND": "最初のメッセージを送信しましょう！"
+    },
+    "HEADER": {
+      "TITLE": "{workspaceName} チャット"
+    },
+    "DELETE_MESSAGE": {
+      "TITLE": "メッセージを削除",
+      "DESC": "この操作は元に戻すことができず、メッセージは完全に削除されます。",
+      "BTN_DELETE": "削除",
+      "BTN_CANCEL": "キャンセル"
+    },
+    "EDIT": {
+      "BADGE": "(編集済)",
+      "TEXT": {
+        "FIRST": "押してください",
+        "SECOND": "キャンセルするには、• 押してください",
+        "THIRD": "保存するには"
+      }
+    },
+    "OPTIONS": {
+      "EDIT": "メッセージを編集",
+      "DELETE": "メッセージを削除"
+    },
+    "LOAD_MORE": "もっと読み込む",
+    "NOTIFICATIONS": "{notifications} 件の新しいメッセージ",
+    "NEW_MESSAGE": {
+      "PLACEHOLDER": "新しいメッセージ",
+      "DELETE_ATTACHMENT": "添付ファイルを削除",
+      "ATTACHMENT_DEFAULT_ERROR": "添付ファイルの追加に失敗しました。",
+      "ATTACHMENT_TO_MANY_ERROR": "添付ファイルの追加に失敗しました。一度に送信できるファイルは、画像5枚とPDF5枚までです。",
+      "ATTACHMENT_TO_BIG_ERROR": "添付ファイルの追加に失敗しました。ファイルサイズが大きすぎます。",
+      "ATTACHMENT_WRONG_FILE_ERROR": "添付ファイルの追加に失敗しました。サポートされていない形式のファイルが含まれています。"
+    }
+  },
+  "CLIENT_ERROR": {
+    "TITLE": "大変申し訳ございません。問題が発生しました。",
+    "BTN": "再試行"
+  },
+  "EDIT_WORKSPACE": {
+    "TITLE": "ワークスペースを編集",
+    "DESC": "ここでは、ワークスペースの名前とアイコンを変更できます。",
+    "PICTURE": {
+      "LABEL": "ワークスペースアイコン",
+      "TITLE": "アイコンを変更",
+      "BTN": "画像を選択"
+    },
+    "DATA": {
+      "INPUTS": {
+        "NAME": "ワークスペース名",
+        "COLOR": "ワークスペースカラーアイコン"
+      },
+      "PLACEHOLDERS": {
+        "NAME": "例：openstudio"
+      },
+      "INFO": "色の変更は、画像が追加されていない場合にのみワークスペースアイコンの表示に影響します",
+      "BTN": "更新",
+      "BTN_PENDING": "更新中"
+    },
+    "DELETE": {
+      "TITLE": "ワークスペースを削除",
+      "DESC": "ワークスペースとそれに属するデータが削除されると、復元する方法はありません。",
+      "LABEL": "ワークスペース名を確定",
+      "BTN": "削除",
+      "DIALOG": {
+        "TITLE": "ワークスペースを削除",
+        "DESC": "すべてのデータは完全に削除され、このワークスペースに属するすべてのユーザーはアクセスできなくなります。",
+        "WARNING": "ワークスペースの削除は永続的であり、元に戻すことはできません。「ワークスペースを削除」をクリックしてワークスペースを削除します。",
+        "BUTTON": "ワークスペースを削除",
+        "PENDING_BTN": "削除中。お待ちください"
+      }
+    },
+    "MEMBERS": {
+      "TITLE": "メンバー",
+      "DESC": "ここでは、ワークスペースのメンバーを管理できます。役割を変更したり、ワークスペースから削除したりできます。",
+      "TABLE": {
+        "USERNAME": "ユーザー名",
+        "PERMISSION_SMALL": "権限",
+        "PERMISSION_BIG": "ワークスペース権限"
+      },
+      "OPTIONS": {
+        "REMOVE_BTN": "削除",
+        "REMOVE": {
+          "TITLE": "ワークスペースから削除",
+          "NOTE": "このユーザーはいつでもこのワークスペースに再度招待できます。「ワークスペースから削除」をクリックして確定します。",
+          "BTN": "ワークスペースから削除",
+          "BTN_PENDING": "削除中"
+        }
+      }
+    }
+  }
+}

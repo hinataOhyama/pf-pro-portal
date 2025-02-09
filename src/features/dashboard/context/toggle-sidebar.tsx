@@ -2,11 +2,11 @@
 
 import { createContext, useContext, useState } from "react";
 
-interface Props {
+type ToggleSidebarProviderProps = {
   children: React.ReactNode;
 }
 
-interface ToggleSidebarContext {
+type ToggleSidebarContext = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -15,7 +15,7 @@ export const ToggleSidebarCtx = createContext<ToggleSidebarContext | null>(
   null
 );
 
-export const ToggleSidebarProvider = ({ children }: Props) => {
+export const ToggleSidebarProvider = ({ children }: ToggleSidebarProviderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

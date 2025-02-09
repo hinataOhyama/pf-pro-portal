@@ -8,11 +8,11 @@ import { useNewMindMap } from "@/features/dashboard/hooks/use-new-mind-map";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type NewMindMapProps = {
   workspaceId: string;
 }
 
-export const NewMindMap = ({ workspaceId }: Props) => {
+export const NewMindMap = ({ workspaceId }: NewMindMapProps) => {
   const t = useTranslations("SIDEBAR.WORKSPACE_OPTIONS");
 
   const { newMindMap, isPending } = useNewMindMap(workspaceId);

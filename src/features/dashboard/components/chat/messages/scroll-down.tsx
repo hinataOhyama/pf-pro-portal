@@ -1,12 +1,12 @@
 import { ArrowDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type ScrollDownProps = {
   notifications: number;
   onScrollDown: () => void;
 }
 
-export const ScrollDown = ({ notifications, onScrollDown }: Props) => {
+export const ScrollDown = ({ notifications, onScrollDown }: ScrollDownProps) => {
   const t = useTranslations("CHAT");
   return (
     <div className="absolute w-full left-1/2 bottom-16 sm:bottom-24 translate-x-[-50%] z-30">

@@ -2,11 +2,11 @@
 
 import { createContext, useContext, useState } from "react";
 
-interface Props {
+type AutosaveIndicatorProviderProps = {
   children: React.ReactNode;
 }
 
-interface AutosaveIndicatorContext {
+type AutosaveIndicatorContext = {
   status: "unsaved" | "saved" | "pending";
   onSetStatus: (status: "unsaved" | "saved" | "pending") => void;
 }
@@ -14,7 +14,7 @@ interface AutosaveIndicatorContext {
 export const AutosaveIndicatorCtx =
   createContext<AutosaveIndicatorContext | null>(null);
 
-export const AutosaveIndicatorProvider = ({ children }: Props) => {
+export const AutosaveIndicatorProvider = ({ children }: AutosaveIndicatorProviderProps) => {
   const [status, setStatus] = useState<"unsaved" | "saved" | "pending">(
     "saved"
   );

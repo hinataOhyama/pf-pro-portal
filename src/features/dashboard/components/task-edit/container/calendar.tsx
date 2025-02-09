@@ -11,7 +11,7 @@ import { format } from "date-fns";
 import { CalendarIcon, Info } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { DateRange } from "react-day-picker";
-import { te, enUS } from "date-fns/locale";
+import { ja, enUS } from "date-fns/locale";
 import { Calendar } from "@/components/shadcn-ui/calendar";
 import { useLocale, useTranslations } from "next-intl";
 import {
@@ -24,7 +24,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useAutosaveIndicator } from "@/features/dashboard/context/auto-save-indicator";
 
-interface Props {
+type TaskCalendarProps = {
   onUpdateFormAction: (e: DateRange | undefined) => void;
   from: Date | undefined;
   to: Date | undefined;
@@ -39,7 +39,7 @@ export function TaskCalendar({
   to,
   workspaceId,
   taskId,
-}: React.HTMLAttributes<HTMLDivElement> & Props) {
+}: React.HTMLAttributes<HTMLDivElement> & TaskCalendarProps) {
   const [date, setDate] = useState<DateRange | undefined>({
     from: from ? new Date(from) : undefined,
     to: to ? new Date(to) : undefined,
@@ -49,7 +49,7 @@ export function TaskCalendar({
   const { status, onSetStatus } = useAutosaveIndicator();
 
   const currentLocale = useMemo(() => {
-    if (lang === "te") return te;
+    if (lang === "ja") return ja;
     else return enUS;
   }, [lang]);
 

@@ -16,7 +16,7 @@ import { TagSelector } from "@/components/common/tag-selector";
 import { useTags } from "../../hooks/use-tags";
 import { LinkTag } from "../task-edit/link-tag";
 
-interface Props {
+type MindMapTagsSelectorProps = {
   mindMapId: string;
   workspaceId: string;
   isMounted: boolean;
@@ -28,7 +28,7 @@ export const MindMapTagsSelector = ({
   workspaceId,
   isMounted,
   initialActiveTags,
-}: Props) => {
+}: MindMapTagsSelectorProps) => {
   const { onSetStatus } = useAutosaveIndicator();
   const t = useTranslations("MIND_MAP");
   const { mutate: updateMindMapActiveTags } = useMutation({

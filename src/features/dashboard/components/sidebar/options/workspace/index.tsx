@@ -9,11 +9,11 @@ import { WorkspaceOption } from "./option";
 import { NewMindMap } from "./actions/new-mind-map";
 import { UsersContainer } from "./users";
 
-interface Props {
+type WorkspaceOptionsProps = {
   workspaceId: string;
 }
 
-export const WorkspaceOptions = ({ workspaceId }: Props) => {
+export const WorkspaceOptions = ({ workspaceId }: WorkspaceOptionsProps) => {
   const t = useTranslations("SIDEBAR.WORKSPACE_OPTIONS");
 
   const { data: workspaceShortcuts, isLoading } = useQuery({
@@ -27,7 +27,7 @@ export const WorkspaceOptions = ({ workspaceId }: Props) => {
       const data = await res.json();
       return data as WorkspaceShortcuts;
     },
-    queryKey: ["getWrokspaceShortcuts", workspaceId],
+    queryKey: ["getWorkspaceShortcuts", workspaceId],
   });
 
   return (

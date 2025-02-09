@@ -54,7 +54,7 @@ export const Welcoming = React.forwardRef<HTMLDivElement, WelcomingProps>(
           {...props}
         >
           <p className="font-bold sm:text-3xl text-2xl">
-            {t("WELCOMEBACK")},{" "}
+            {t("WELCOME_BACK")},{" "}
             <span>
               {name
                 ? name && surname

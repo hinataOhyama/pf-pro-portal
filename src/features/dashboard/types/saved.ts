@@ -1,6 +1,6 @@
 import { UserInfo } from "./info";
 
-export interface StarredItem {
+export type StarredItem = {
   id: string;
   link: string;
   type: "mindMap" | "task";

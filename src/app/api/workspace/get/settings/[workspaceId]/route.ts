@@ -1,13 +1,13 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-interface Params {
+type SettingsWorkspaceParams = {
   params: Promise<{
     workspaceId: string;
   }>;
 }
 
-export const GET = async (request: Request, props: Params) => {
+export const GET = async (request: Request, props: SettingsWorkspaceParams) => {
   const params = await props.params;
 
   const {

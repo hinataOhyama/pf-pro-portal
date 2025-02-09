@@ -38,7 +38,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/shadcn-ui/radio-group";
 import { ScrollArea } from "@/components/shadcn-ui/scroll-area";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type EdgeOptionsProps = {
   clickedEdge: Edge | null;
   isOpen: boolean;
   onSave: (data: EdgeOptionsSchema) => void;
@@ -65,7 +65,7 @@ export const EdgeOptions = ({
   isOpen,
   onDeleteEdge,
   onSave,
-}: Props) => {
+}: EdgeOptionsProps) => {
   const t = useTranslations("MIND_MAP.EDGE_OPTIONS");
   const form = useForm<EdgeOptionsSchema>({
     resolver: zodResolver(edgeOptionsSchema),

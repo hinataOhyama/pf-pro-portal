@@ -7,14 +7,14 @@ import { notFound } from "next/navigation";
 import MindMapPresentation from "@/features/dashboard/components/mind-map/presentation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 
-interface Params {
+type MindMapParams = {
   params: Promise<{
     workspaceId: string;
     mindMapId: string;
   }>;
 }
 
-const MindMapPage = async (props: Params) => {
+const MindMapPage = async (props: MindMapParams) => {
   const params = await props.params;
 
   const {

@@ -12,12 +12,12 @@ import { ExtendedMessage } from "@/features/dashboard/types/chat";
 import { MoreHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type OptionsProps = {
   onChangeEditAction: (editing: boolean) => void;
   message: ExtendedMessage;
 }
 
-export const Options = ({ onChangeEditAction, message }: Props) => {
+export const Options = ({ onChangeEditAction, message }: OptionsProps) => {
   const { setMessageToDelete } = useMessage((state) => state);
   const t = useTranslations("CHAT.OPTIONS");
   return (

@@ -30,14 +30,14 @@ import { ChangeEmoji } from "./change-emoji";
 import TextareaAutoSize from "react-textarea-autosize";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type EditInfoProps = {
   workspaceId: string;
   mapId: string;
   emoji: string;
   title?: string;
 }
 
-export const EditInfo = ({ workspaceId, mapId, emoji, title }: Props) => {
+export const EditInfo = ({ workspaceId, mapId, emoji, title }: EditInfoProps) => {
   const [open, setOpen] = useState(false);
   const _titleRef = useRef<HTMLTextAreaElement>(null);
   const { onSetStatus } = useAutosaveIndicator();

@@ -1,10 +1,10 @@
 import { cn } from "@/lib/shadcn-utils";
 
-interface Props {
+type VideoContainerProps = {
   className?: string;
 }
 
-export const VideoContainer = ({ className }: Props) => {
+export const VideoContainer = ({ className }: VideoContainerProps) => {
   return (
     <div
       className={cn(

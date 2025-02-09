@@ -2,7 +2,7 @@ import { MESSAGES_LIMIT } from "@/constants/chat";
 import { ExtendedMessage } from "@/features/dashboard/types/chat";
 import { create } from "zustand";
 
-interface MessageState {
+type MessageState = {
   initialMessagesLoading: boolean;
   nextPage: number;
   hasMore: boolean;

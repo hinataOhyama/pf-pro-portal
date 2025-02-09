@@ -8,11 +8,11 @@ import { ActiveFilteredUser } from "./active-filtered/user";
 import { ActiveFilteredTag } from "./active-filtered/tag";
 import { useFilterByUsersAndTagsInWorkspace } from "@/features/dashboard/context/filter-by-users-tags-in-workspace";
 
-interface Props {
+type FilterContainerProps = {
   sessionUserId: string;
 }
 
-export const FilterContainer = ({ sessionUserId }: Props) => {
+export const FilterContainer = ({ sessionUserId }: FilterContainerProps) => {
   const { filterAssignedUsers, filterTags } =
     useFilterByUsersAndTagsInWorkspace();
 

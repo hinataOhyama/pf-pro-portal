@@ -4,14 +4,14 @@ import { UserPermission } from "@prisma/client";
 import { LucideIcon } from "lucide-react";
 import { Link } from "@/lib/i18n";
 
-interface Props {
+type LinkItemProps = {
   title: string;
   Icon: LucideIcon;
   userRole: UserPermission | null;
   href: string;
 }
 
-export const LinkItem = ({ Icon, title, userRole, href }: Props) => {
+export const LinkItem = ({ Icon, title, userRole, href }: LinkItemProps) => {
   return (
     <Link
       href={href}

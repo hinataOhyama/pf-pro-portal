@@ -18,11 +18,11 @@ import { Separator } from "@/components/shadcn-ui/separator";
 import { AddLink } from "./add-link";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type ToolsContainerProps = {
   editor: Editor;
 }
 
-export const ToolsContainer = ({ editor }: Props) => {
+export const ToolsContainer = ({ editor }: ToolsContainerProps) => {
   const t = useTranslations("TASK.EDITOR.HOVER");
   return (
     <div className="flex items-center border rounded-md shadow-sm bg-popover p-1 text-popover-foreground gap-1 max-w-[13rem] flex-wrap sm:max-w-lg">

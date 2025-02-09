@@ -22,7 +22,7 @@ import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { v4 as uuidv4 } from "uuid";
 
-interface Props {
+type CreateNewTagOrEditTagProps = {
   onSetTab: (tab: "list" | "newTag" | "editTag") => void;
   workspaceId: string;
   edit?: boolean;
@@ -50,7 +50,7 @@ export const CreateNewTagOrEditTag = ({
   currentActiveTags,
   onDeleteActiveTag,
   onSelectActiveTag,
-}: Props) => {
+}: CreateNewTagOrEditTagProps) => {
   const form = useForm<TagSchema>({
     resolver: zodResolver(tagSchema),
     defaultValues: {

@@ -7,11 +7,11 @@ import {
 } from "@/components/shadcn-ui/hover-card";
 import { useFormatter, useTranslations } from "next-intl";
 
-interface Props {
+type EditedBadgeProps = {
   updatedAt: Date;
 }
 
-export const EditedBadge = ({ updatedAt }: Props) => {
+export const EditedBadge = ({ updatedAt }: EditedBadgeProps) => {
   const format = useFormatter();
   const dateTime = new Date(updatedAt);
   const now = new Date();

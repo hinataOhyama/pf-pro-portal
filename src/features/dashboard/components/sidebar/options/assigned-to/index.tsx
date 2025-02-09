@@ -9,7 +9,7 @@ import { useRouter } from "@/lib/i18n";
 import { AssignedToMeWorkspace } from "./workspace";
 import { useGetAssignedToMeParams } from "@/features/dashboard/hooks/use-get-assigned-to";
 
-interface Props {
+type AssignedToMeFilterProps = {
   userWorkspaces: Workspace[];
 }
 
@@ -28,7 +28,7 @@ const RADIO_OPTIONS = [
   },
 ] as const;
 
-export const AssignedToMeFilter = ({ userWorkspaces }: Props) => {
+export const AssignedToMeFilter = ({ userWorkspaces }: AssignedToMeFilterProps) => {
   const { currentType, workspaceFilterParam } = useGetAssignedToMeParams();
   const router = useRouter();
 

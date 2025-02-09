@@ -9,13 +9,13 @@ import { AssignedToMindMapUser } from "@/features/dashboard/types/assigned-to";
 import { CommandUser } from "./command-user";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type CommandContainerProps = {
   users: AssignedToMindMapUser[];
   mindMapId: string;
   workspaceId: string;
 }
 
-export const CommandContainer = ({ users, mindMapId, workspaceId }: Props) => {
+export const CommandContainer = ({ users, mindMapId, workspaceId }: CommandContainerProps) => {
   const t = useTranslations("MIND_MAP.ASSIGNMENT");
   return (
     <Command className="w-[15rem]">

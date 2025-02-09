@@ -14,11 +14,11 @@ import {
   useState,
 } from "react";
 
-interface Props {
+type UserActivityStatusProviderProps = {
   children: React.ReactNode;
 }
 
-interface UserActivityStatus {
+type UserActivityStatus = {
   isLoading: boolean;
   isError: boolean;
 
@@ -35,7 +35,7 @@ export const UserActivityStatusCtx = createContext<UserActivityStatus | null>(
   null
 );
 
-export const UserActivityStatusProvider = ({ children }: Props) => {
+export const UserActivityStatusProvider = ({ children }: UserActivityStatusProviderProps) => {
   const [allInactiveUsers, setAllInactiveUsers] = useState<
     UserActiveItemList[]
   >([]);

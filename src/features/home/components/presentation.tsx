@@ -19,7 +19,7 @@ export const HomePresentation = () => {
         <main>
           <TextSection
             title="Your Productivity Partner"
-            desc="Maximize your team’s efficiency with SuperProductive—an all-in-one workspace designed to consolidate your essential tools into one cohesive platform."
+            desc="Maximize your team’s efficiency with ProPortal—an all-in-one workspace designed to consolidate your essential tools into one cohesive platform."
           />
 
           <Section
@@ -38,12 +38,12 @@ export const HomePresentation = () => {
           <Section
             id="Roles"
             title="Roles & Permissions"
-            desc="SuperProductive’s role management system simplifies workspace oversight. Admins and owners can adjust user roles, manage account and workspace settings, and oversee permissions to ensure smooth collaboration."
+            desc="ProPortal’s role management system simplifies workspace oversight. Admins and owners can adjust user roles, manage account and workspace settings, and oversee permissions to ensure smooth collaboration."
             images={homePageRolesAndSettingsImgs}
           />
           <TextSection
             title="The Future of Team Collaboration"
-            desc=" Effortlessly share projects and invite others to join with easy shareable links. SuperProductive enables instant project review and real-time chatting with team members from anywhere."
+            desc=" Effortlessly share projects and invite others to join with easy shareable links. ProPortal enables instant project review and real-time chatting with team members from anywhere."
           />
 
           <Section

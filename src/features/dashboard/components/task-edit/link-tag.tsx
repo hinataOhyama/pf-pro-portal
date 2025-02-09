@@ -5,7 +5,7 @@ import { Link } from "@/lib/i18n";
 import { Tag as TagType, CustomColors } from "@prisma/client";
 import { useMemo } from "react";
 
-interface Props {
+type LinkTagProps = {
   tag: TagType;
   disabled?: boolean;
 }
@@ -13,7 +13,7 @@ interface Props {
 export const LinkTag = ({
   tag: { color, id, name, workspaceId },
   disabled,
-}: Props) => {
+}: LinkTagProps) => {
   const tagColor = useMemo(() => {
     switch (color) {
       case CustomColors.BLUE:

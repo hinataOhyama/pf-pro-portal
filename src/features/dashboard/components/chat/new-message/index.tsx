@@ -18,11 +18,11 @@ import { useMessage } from "@/store/chat/messages";
 import { v4 as uuidv4 } from "uuid";
 import { useOnKeyDown } from "@/features/dashboard/hooks/use-on-key-down";
 
-interface Props {
+type NewMessageContainerProps = {
   chatId: string;
 }
 
-export const NewMessageContainer = ({ chatId }: Props) => {
+export const NewMessageContainer = ({ chatId }: NewMessageContainerProps) => {
   const m = useTranslations("MESSAGES");
   const { toast } = useToast();
   const t = useTranslations("CHAT.NEW_MESSAGE");

@@ -11,13 +11,13 @@ import Link from "next/link";
 import { TagItem } from "./tag-item";
 import { AssignedToTaskUser } from "./assigned-to-task-user";
 
-interface Props {
+type RecentActivityItemProps = {
   activity: WorkspaceRecentActivity;
 }
 
 export const RecentActivityItem = ({
   activity: { tags, title, emoji, starred, type, updated, assignedTo, link },
-}: Props) => {
+}: RecentActivityItemProps) => {
   const truncatedTitle = useTruncateText(title, 40);
 
   const c = useTranslations("COMMON");

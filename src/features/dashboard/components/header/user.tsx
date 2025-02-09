@@ -22,13 +22,13 @@ import { Link } from "@/lib/i18n";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 
-interface Props {
+type UserProps = {
   profileImage?: string | null;
   username: string;
   email: string;
 }
 
-export const User = ({ profileImage, username, email }: Props) => {
+export const User = ({ profileImage, username, email }: UserProps) => {
   const { theme, setTheme } = useTheme();
   const { onSelectChange } = useChangeLocale();
   const lang = useLocale();
@@ -121,12 +121,12 @@ export const User = ({ profileImage, username, email }: Props) => {
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => {
-                    onSelectChange("te");
+                    onSelectChange("ja");
                   }}
                   className="flex justify-between items-center cursor-pointer"
                 >
                   <span>Telugu</span>
-                  {lang === "te" && <Check size={14} />}
+                  {lang === "ja" && <Check size={14} />}
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>

@@ -4,7 +4,7 @@ import { Check, Pencil, Tag } from "lucide-react";
 import { CustomColors, Tag as TagType } from "@prisma/client";
 import { useMemo, useState } from "react";
 
-interface Props {
+type CommandTagItemProps = {
   tag: TagType;
   currentActiveTags: TagType[];
   onSelectActiveTag: (id: string) => void;
@@ -16,7 +16,7 @@ export const CommandTagItem = ({
   currentActiveTags,
   onSelectActiveTag,
   onEditTagInfo,
-}: Props) => {
+}: CommandTagItemProps) => {
   const isActive = useMemo(() => {
     return (
       currentActiveTags.length > 0 &&

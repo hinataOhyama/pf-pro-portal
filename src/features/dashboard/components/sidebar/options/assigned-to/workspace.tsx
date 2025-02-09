@@ -6,7 +6,7 @@ import { useMemo } from "react";
 import { CustomColors } from "@prisma/client";
 import Image from "next/image";
 
-interface Props {
+type AssignedToMeWorkspaceProps = {
   workspaceFilterParam: string | null;
   workspace: Workspace;
   href: string;
@@ -18,7 +18,7 @@ export const AssignedToMeWorkspace = ({
   workspaceFilterParam,
   href,
   currentType,
-}: Props) => {
+}: AssignedToMeWorkspaceProps) => {
   const workspaceColor = useMemo(() => {
     switch (color) {
       case CustomColors.PURPLE:

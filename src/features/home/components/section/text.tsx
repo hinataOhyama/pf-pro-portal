@@ -2,12 +2,12 @@
 
 import { useIsVisible } from "@/hooks/use-is-visible";
 
-interface Props {
+type TextSectionProps = {
   title: string;
   desc: string;
 }
 
-export const TextSection = ({ title, desc }: Props) => {
+export const TextSection = ({ title, desc }: TextSectionProps) => {
   const { isVisible, ref } = useIsVisible();
   return (
     <section

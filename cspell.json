@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "cspell",
+    "shadcn",
+    "embla",
+    "mindmap",
+    "reactflow",
+    "supabase",
+    "uploadthing",
+    "uuidv",
+    "webp",
+    "dropcursor",
+    "dont",
+    ""
+  ],
+  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "dist"]
+}

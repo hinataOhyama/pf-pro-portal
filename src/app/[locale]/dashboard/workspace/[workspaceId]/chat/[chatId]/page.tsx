@@ -7,14 +7,14 @@ import { notFound, redirect } from "next/navigation";
 import ChatPresentation from "@/features/dashboard/components/chat/presentation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 
-interface Params {
+type ChatParams = {
   params: Promise<{
     workspaceId: string;
     chatId: string;
   }>;
 }
 
-const Chat = async (props: Params) => {
+const Chat = async (props: ChatParams) => {
   const params = await props.params;
 
   const {

@@ -7,14 +7,14 @@ import EditTaskPresentation from "@/features/dashboard/components/task-edit/pres
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import { getTask } from "@/features/dashboard/api/task";
 
-interface Params {
+type EditTaskParams = {
   params: Promise<{
     workspaceId: string;
     taskId: string;
   }>;
 }
 
-const EditTaskPage = async (props: Params) => {
+const EditTaskPage = async (props: EditTaskParams) => {
   const params = await props.params;
 
   const {

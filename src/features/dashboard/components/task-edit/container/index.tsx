@@ -20,7 +20,7 @@ import { useAutosaveIndicator } from "@/features/dashboard/context/auto-save-ind
 import axios from "axios";
 import { useTags } from "@/features/dashboard/hooks/use-tags";
 
-interface Props {
+type TaskContainerProps = {
   workspaceId: string;
   initialActiveTags: Tag[];
   taskId: string;
@@ -40,7 +40,7 @@ export const TaskContainer = ({
   emoji,
   from,
   to,
-}: Props) => {
+}: TaskContainerProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const _titleRef = useRef<HTMLTextAreaElement>(null);
   const t = useTranslations("TASK");

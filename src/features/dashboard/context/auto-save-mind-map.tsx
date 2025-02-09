@@ -7,13 +7,13 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
 
-interface AutoSaveMindMapContext {
+type AutoSaveMindMapContext = {
   onSave: () => void;
   setRfInstance: React.Dispatch<React.SetStateAction<ReactFlowInstance | null>>;
   onSetIds: (mindMapId: string, workspaceId: string) => void;
 }
 
-interface Props {
+type AutoSaveMindMapProviderProps = {
   children: React.ReactNode;
 }
 
@@ -21,7 +21,7 @@ export const AutoSaveMindMapCtx = createContext<AutoSaveMindMapContext | null>(
   null
 );
 
-export const AutoSaveMindMapProvider = ({ children }: Props) => {
+export const AutoSaveMindMapProvider = ({ children }: AutoSaveMindMapProviderProps) => {
   const [rfInstance, setRfInstance] = useState<null | ReactFlowInstance>(null);
   const [ids, setIds] = useState<null | {
     mindMapId: string;

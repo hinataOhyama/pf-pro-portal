@@ -16,11 +16,11 @@ import { Input } from "@/components/shadcn-ui/input";
 import { Button } from "@/components/shadcn-ui/button";
 import { Loading } from "@/components/ui/loading";
 
-interface Props {
+type AddImageByLinkProps = {
   onAddImage: (link: string) => void;
 }
 
-export const AddImageByLink = ({ onAddImage }: Props) => {
+export const AddImageByLink = ({ onAddImage }: AddImageByLinkProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const t = useTranslations("TASK.EDITOR.IMAGE.LINK_TAB");

@@ -63,7 +63,7 @@ export const LastStep = () => {
         <p>
           {t("FINISH.DESC_FIRST")}{" "}
           <span>
-            Super <span className="text-primary font-semibold">Productive</span>
+            Pro <span className="text-primary font-semibold">Portal</span>
           </span>
           {t("FINISH.DESC_SECOND")}{" "}
         </p>

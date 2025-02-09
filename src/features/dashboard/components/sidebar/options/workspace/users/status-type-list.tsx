@@ -1,13 +1,13 @@
 import { UserActiveItemList } from "@/features/dashboard/types/info";
 import { UserStatus } from "./status";
 
-interface Props {
+type UserStatusTypeListProps = {
   users: UserActiveItemList[];
   title: string;
   active?: boolean;
 }
 
-export const UserStatusTypeList = ({ users, title, active }: Props) => {
+export const UserStatusTypeList = ({ users, title, active }: UserStatusTypeListProps) => {
   if (users.length === 0) return null;
 
   return (

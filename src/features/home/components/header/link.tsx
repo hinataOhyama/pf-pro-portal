@@ -2,13 +2,13 @@ import { Button } from "@/components/shadcn-ui/button";
 import { scrollToHash } from "@/features/home/lib/scroll-to-hash";
 import { LucideIcon } from "lucide-react";
 
-interface Props {
+type HeaderLinkProps = {
   Icon: LucideIcon;
   title: string;
   href: string;
 }
 
-export const HeaderLink = ({ Icon, href, title }: Props) => {
+export const HeaderLink = ({ Icon, href, title }: HeaderLinkProps) => {
   return (
     <Button
       onClick={() => {

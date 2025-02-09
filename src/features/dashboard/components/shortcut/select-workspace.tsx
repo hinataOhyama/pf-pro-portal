@@ -7,7 +7,7 @@ import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/shadcn-ui/button";
 
-interface Props {
+type SelectWorkspaceProps = {
   workspace: Workspace;
   onSelectActiveWorkspaceAction: (workspace: Workspace) => void;
 }
@@ -15,7 +15,7 @@ interface Props {
 export const SelectWorkspace = ({
   workspace,
   onSelectActiveWorkspaceAction,
-}: Props) => {
+}: SelectWorkspaceProps) => {
   const workspaceColor = useMemo(() => {
     switch (workspace.color) {
       case CustomColors.PURPLE:

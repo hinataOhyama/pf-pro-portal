@@ -19,13 +19,13 @@ import axios from "axios";
 
 const limit = 600;
 
-interface Props {
+type EditorTasksProps = {
   content?: JSON;
   taskId: string;
   workspaceId: string;
 }
 
-export const EditorTasks = ({ content, taskId, workspaceId }: Props) => {
+export const EditorTasks = ({ content, taskId, workspaceId }: EditorTasksProps) => {
   const t = useTranslations("TASK");
   const { onSetStatus, status } = useAutosaveIndicator();
   const editor = useEditor({

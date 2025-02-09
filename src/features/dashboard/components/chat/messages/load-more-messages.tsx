@@ -10,12 +10,12 @@ import axios from "axios";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-interface Props {
+type LoadMoreMessagesProps = {
   chatId: string;
   sessionUserId: string;
 }
 
-export const LoadMoreMessages = ({ chatId, sessionUserId }: Props) => {
+export const LoadMoreMessages = ({ chatId, sessionUserId }: LoadMoreMessagesProps) => {
   const m = useTranslations("MESSAGES");
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations("CHAT");

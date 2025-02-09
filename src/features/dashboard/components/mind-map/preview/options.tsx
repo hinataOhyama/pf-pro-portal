@@ -30,7 +30,7 @@ import { useRouter } from "@/lib/i18n";
 import { Link } from "@/lib/i18n";
 import { useState } from "react";
 
-interface Props {
+type MindMapCardPreviewOptionsProps = {
   isSaved: boolean;
   workspaceId: string;
   mindMapId: string;
@@ -44,7 +44,7 @@ export const MindMapCardPreviewOptions = ({
   mindMapId,
   userRole,
   onSetIsSavedAction,
-}: Props) => {
+}: MindMapCardPreviewOptionsProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const m = useTranslations("MESSAGES");
   const t = useTranslations("MIND_MAP.PREVIEW");

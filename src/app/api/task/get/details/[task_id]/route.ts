@@ -1,13 +1,13 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-interface Params {
+type DetailTaskParams = {
   params: Promise<{
     task_id: string;
   }>;
 }
 
-export const GET = async (request: Request, props: Params) => {
+export const GET = async (request: Request, props: DetailTaskParams) => {
   const params = await props.params;
 
   const {

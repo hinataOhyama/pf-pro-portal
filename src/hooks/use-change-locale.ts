@@ -10,7 +10,7 @@ export const useChangeLocale = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const onSelectChange = (nextLocale: "te" | "en") => {
+  const onSelectChange = (nextLocale: "ja" | "en") => {
     setLoading(true);
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });

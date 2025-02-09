@@ -14,13 +14,13 @@ import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
-interface Props {
+type EditMessageProps = {
   messageInfo: ExtendedMessage;
   content: string;
   onChangeEditAction: (editing: boolean) => void;
 }
 
-export const EditMessage = ({ content, messageInfo, onChangeEditAction }: Props) => {
+export const EditMessage = ({ content, messageInfo, onChangeEditAction }: EditMessageProps) => {
   const [message, setMessage] = useState(content);
 
   const m = useTranslations("MESSAGES");

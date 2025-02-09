@@ -11,12 +11,12 @@ import { useUserActivityStatus } from "@/features/dashboard/context/user-activit
 import { showUserInformation } from "@/features/dashboard/utils/show-user-info";
 import { useMessage } from "@/store/chat/messages";
 
-interface Props {
+type MessageProps = {
   message: ExtendedMessage;
   sessionUserId: string;
 }
 
-export const Message = ({ message, sessionUserId }: Props) => {
+export const Message = ({ message, sessionUserId }: MessageProps) => {
   const {
     content,
     additionalResources,
