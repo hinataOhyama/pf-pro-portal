@@ -8,13 +8,20 @@ import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-comple
 import { getTask } from "@/features/dashboard/api/task";
 
 interface Params {
-  params: {
+  params: Promise<{
     workspaceId: string;
     taskId: string;
-  };
+  }>;
 }
 
-const EditTaskPage = async ({ params: { workspaceId, taskId } }: Params) => {
+const EditTaskPage = async (props: Params) => {
+  const params = await props.params;
+
+  const {
+    workspaceId,
+    taskId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}/tasks/task/${taskId}`
   );

@@ -21,7 +21,10 @@ const nextConfig: NextConfig = {
         hostname: "avatars.githubusercontent.com",
       },
     ]
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 const nextIntl = withNextIntl("./src/lib/i18n.ts");

@@ -190,7 +190,7 @@ export const CreateNewTagOrEditTag = ({
         context?.checkedPreviousTags
       );
       if (onUpdateActiveTags && prevTag) {
-        onUpdateActiveTags(id, prevTag.color, prevTag.name);
+        onUpdateActiveTags(id!, prevTag.color, prevTag.name);
       }
       const error = err?.response?.data ? err.response.data : "ERRORS.DEFAULT";
 

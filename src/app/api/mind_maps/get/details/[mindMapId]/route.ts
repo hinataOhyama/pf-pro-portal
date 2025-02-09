@@ -2,15 +2,18 @@ import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 interface Params {
-  params: {
+  params: Promise<{
     mindMapId: string;
-  };
+  }>;
 }
 
-export const GET = async (
-  request: Request,
-  { params: { mindMapId } }: Params
-) => {
+export const GET = async (request: Request, props: Params) => {
+  const params = await props.params;
+
+  const {
+    mindMapId
+  } = params;
+
   const url = new URL(request.url);
   const userId = url.searchParams.get("userId");
 

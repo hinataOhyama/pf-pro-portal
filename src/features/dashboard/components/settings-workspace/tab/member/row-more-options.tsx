@@ -19,7 +19,7 @@ import {
 } from "@/components/shadcn-ui/dropdown-menu";
 import { Warning } from "@/components/ui/warning";
 import { useToast } from "@/hooks/use-toast";
-import { SubscriptionUser } from "@/features/dashboard/types/workspace";
+import { SubscriptionUser } from "@/features/dashboard/types/info";
 import { UserPermission as UserPermissionType } from "@prisma/client";
 import { MoreHorizontal } from "lucide-react";
 import { useTranslations } from "next-intl";

@@ -2,15 +2,18 @@ import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 interface Params {
-  params: {
+  params: Promise<{
     workspaceId: string;
-  };
+  }>;
 }
 
-export const GET = async (
-  request: Request,
-  { params: { workspaceId } }: Params
-) => {
+export const GET = async (request: Request, props: Params) => {
+  const params = await props.params;
+
+  const {
+    workspaceId
+  } = params;
+
   const url = new URL(request.url);
 
   const userId = url.searchParams.get("userId");

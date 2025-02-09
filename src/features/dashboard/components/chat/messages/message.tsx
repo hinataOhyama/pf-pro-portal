@@ -30,7 +30,7 @@ export const Message = ({ message, sessionUserId }: Props) => {
   const dateTime = new Date(createdAt);
   const now = new Date();
 
-  const messageRef = useRef<HTMLDivElement | null>(null);
+  const messageRef = useRef<HTMLDivElement>(null!);
   const [isEditing, setIsEditing] = useState(false);
 
   const changeEditModeHandler = (editing: boolean) => {
@@ -107,7 +107,7 @@ export const Message = ({ message, sessionUserId }: Props) => {
       </div>
       {sender.id === sessionUserId && !isEditing && (
         <div>
-          <Options onChangeEdit={changeEditModeHandler} message={message} />
+          <Options onChangeEditAction={changeEditModeHandler} message={message} />
         </div>
       )}
     </div>

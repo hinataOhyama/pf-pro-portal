@@ -1,6 +1,7 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
  
 generator client {
@@ -33,6 +34,7 @@ model User {
   messages Message[]
   userNotifications Notification[] @relation("NotifyUser")
   userCreatedNotifications Notification[] @relation("NotifyCreator")
+  lastTimeActive String?
 }
  
 model Account {
