@@ -52,7 +52,7 @@ export const NewMessageContainer = ({ chatId }: Props) => {
   const [lastMessageId, setLastMessageId] = useState("");
   const { addMessage, deleteMessage } = useMessage((state) => state);
 
-  const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null!);
 
   const { mutate: newMessage } = useMutation({
     mutationFn: async () => {
@@ -132,7 +132,7 @@ export const NewMessageContainer = ({ chatId }: Props) => {
       <div className="w-full flex justify-between items-center gap-4">
         <div className="flex gap-0.5 sm:gap-1">
           <UploadFilesButton
-            onChangeUploadedFiles={onChangeUploadedFilesHandler}
+            onChangeUploadedFilesAction={onChangeUploadedFilesHandler}
           />
           <EmojiSelector
             asChild

@@ -1,10 +1,8 @@
 import React from "react";
 import { DashboardHeader } from "../header";
 import { Session } from "@/features/onboarding/lib/check-completed";
-import {
-  SettingsWorkspace,
-  SubscriptionUser,
-} from "@/features/dashboard/types/workspace";
+import { SettingsWorkspace } from "@/features/dashboard/types/workspace";
+import { SubscriptionUser } from "@/features/dashboard/types/info";
 import { WorkspaceTab } from "./tab";
 import { InviteUsers } from "./invite-users";
 

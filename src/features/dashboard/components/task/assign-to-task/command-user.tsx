@@ -41,7 +41,7 @@ export const CommandUser = ({
       });
     },
     onMutate: async () => {
-      await queryClient.cancelQueries(["getAssignedToTaskInfo"]);
+      await queryClient.cancelQueries({ queryKey: ["getAssignedToTaskInfo"] });
 
       setIsActiveUser((prev) => !prev);
     },
@@ -55,7 +55,7 @@ export const CommandUser = ({
       });
     },
     onSettled: () => {
-      queryClient.invalidateQueries(["getAssignedToTaskInfo", taskId]);
+      queryClient.invalidateQueries({ queryKey: ["getAssignedToTaskInfo", taskId] });
     },
     mutationKey: ["handleTaskAssignment", taskId],
   });

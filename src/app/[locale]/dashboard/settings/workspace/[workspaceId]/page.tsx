@@ -4,14 +4,18 @@ import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-comple
 import { notFound } from "next/navigation";
 
 type WorkspaceSettingsPageProps = {
-  params: {
+  params: Promise<{
     workspaceId: string;
-  };
+  }>;
 };
 
-const WorkspaceSettingsPage = async ({
-  params: { workspaceId },
-}: WorkspaceSettingsPageProps) => {
+const WorkspaceSettingsPage = async (props: WorkspaceSettingsPageProps) => {
+  const params = await props.params;
+
+  const {
+    workspaceId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/settings/workspace/${workspaceId}`
   );

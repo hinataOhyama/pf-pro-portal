@@ -7,12 +7,18 @@ import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-comple
 import WorkspacePresentation from "@/features/dashboard/components/workspace/presentation";
 
 interface Params {
-  params: {
+  params: Promise<{
     workspaceId: string;
-  };
+  }>;
 }
 
-const Workspace = async ({ params: { workspaceId } }: Params) => {
+const Workspace = async (props: Params) => {
+  const params = await props.params;
+
+  const {
+    workspaceId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}`
   );

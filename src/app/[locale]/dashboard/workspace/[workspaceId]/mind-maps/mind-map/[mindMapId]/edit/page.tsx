@@ -9,15 +9,20 @@ import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-comple
 import MindMapEditPresentation from "@/features/dashboard/components/mind-map-edit/presentation";
 
 interface Params {
-  params: {
+  params: Promise<{
     workspaceId: string;
     mindMapId: string;
-  };
+  }>;
 }
 
-const EditMindMapPage = async ({
-  params: { workspaceId, mindMapId },
-}: Params) => {
+const EditMindMapPage = async (props: Params) => {
+  const params = await props.params;
+
+  const {
+    workspaceId,
+    mindMapId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}/tasks/task/${mindMapId}`
   );

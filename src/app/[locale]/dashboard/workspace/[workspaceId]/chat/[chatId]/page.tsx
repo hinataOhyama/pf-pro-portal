@@ -8,13 +8,20 @@ import ChatPresentation from "@/features/dashboard/components/chat/presentation"
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 
 interface Params {
-  params: {
+  params: Promise<{
     workspaceId: string;
     chatId: string;
-  };
+  }>;
 }
 
-const Chat = async ({ params: { workspaceId, chatId } }: Params) => {
+const Chat = async (props: Params) => {
+  const params = await props.params;
+
+  const {
+    workspaceId,
+    chatId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}/chat/${chatId}`
   );

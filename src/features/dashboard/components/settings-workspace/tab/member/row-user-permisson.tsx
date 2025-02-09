@@ -1,6 +1,6 @@
 "use client";
 
-import { SubscriptionUser } from "@/features/dashboard/types/workspace";
+import { SubscriptionUser } from "@/features/dashboard/types/info";
 import { UserPermission as UserPermissionType } from "@prisma/client";
 import React from "react";
 import { useMutation } from "@tanstack/react-query";

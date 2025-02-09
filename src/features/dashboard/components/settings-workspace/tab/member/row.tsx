@@ -1,7 +1,7 @@
 "use client";
 
 import { UserAvatar } from "@/components/ui/user-avatar";
-import { SubscriptionUser } from "@/features/dashboard/types/workspace";
+import { SubscriptionUser } from "@/features/dashboard/types/info";
 import { UserPermission as UserPermissionType } from "@prisma/client";
 import React from "react";
 import { RowMoreOptions } from "./row-more-options";

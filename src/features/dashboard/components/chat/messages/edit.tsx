@@ -56,7 +56,7 @@ export const EditMessage = ({ content, messageInfo, onChangeEditAction }: Props)
     mutationKey: ["editMessage", messageInfo.id],
   });
 
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null!);
 
   useEffect(() => {
     if (textAreaRef.current) {

@@ -41,7 +41,7 @@ export const GET = async (request: Request) => {
     if (!users) return NextResponse.json([], { status: 200 });
 
     return NextResponse.json(users, { status: 200 });
-  } catch (err) {
+  } catch {
     return NextResponse.json("ERRORS.DB_ERROR", { status: 405 });
   }
 };

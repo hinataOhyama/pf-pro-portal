@@ -8,15 +8,20 @@ import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-comple
 import { notFound } from "next/navigation";
 
 type TaskPageProps = {
-  params: {
+  params: Promise<{
     workspaceId: string;
     taskId: string;
-  };
+  }>;
 };
 
-const TaskDetailPage = async ({
-  params: { workspaceId, taskId },
-}: TaskPageProps) => {
+const TaskDetailPage = async (props: TaskPageProps) => {
+  const params = await props.params;
+
+  const {
+    workspaceId,
+    taskId
+  } = params;
+
   const session = await checkCompletedOnboarding(
     `/dashboard/workspace/${workspaceId}/tasks/task/${taskId}`
   );

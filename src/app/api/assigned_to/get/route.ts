@@ -3,7 +3,7 @@ import { sortMindMapsAndTasksDataByUpdatedAt } from "@/lib/sort-mind-maps-tasks-
 import {
   AssignedItemType,
   AssignedToMeTaskAndMindMaps,
-} from "@/types/extended";
+} from "@/features/dashboard/types/assigned-to";
 import { NextResponse } from "next/server";
 
 export const GET = async (request: Request) => {
@@ -334,7 +334,7 @@ export const GET = async (request: Request) => {
         }
       );
     }
-  } catch (err) {
+  } catch {
     return NextResponse.json("ERRORS.DB_ERROR", { status: 405 });
   }
 };
