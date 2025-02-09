@@ -4,11 +4,11 @@ import { CustomColors, Tag as TagType } from "@prisma/client";
 import { Tag } from "lucide-react";
 import { useMemo } from "react";
 
-interface Props {
+type TagItemProps = {
   tag: TagType;
 }
 
-export const TagItem = ({ tag: { color, name } }: Props) => {
+export const TagItem = ({ tag: { color, name } }: TagItemProps) => {
   const tagColor = useMemo(() => {
     switch (color) {
       case CustomColors.PURPLE:

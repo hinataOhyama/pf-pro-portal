@@ -1,13 +1,13 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-interface Params {
+type DetailMindMapParams = {
   params: Promise<{
     mindMapId: string;
   }>;
 }
 
-export const GET = async (request: Request, props: Params) => {
+export const GET = async (request: Request, props: DetailMindMapParams) => {
   const params = await props.params;
 
   const {

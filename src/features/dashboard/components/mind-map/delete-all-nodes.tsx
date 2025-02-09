@@ -21,12 +21,12 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { Loading } from "@/components/ui/loading";
 
-interface Props {
+type DeleteAllNodesProps = {
   mindMapId: string;
   workspaceId: string;
 }
 
-export const DeleteAllNodes = ({ workspaceId, mindMapId }: Props) => {
+export const DeleteAllNodes = ({ workspaceId, mindMapId }: DeleteAllNodesProps) => {
   const [open, setOpen] = useState(false);
   const t = useTranslations("MIND_MAP.DELETE");
   const { setNodes, getNodes } = useReactFlow();

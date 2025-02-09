@@ -11,21 +11,21 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
-import { enUS, te } from "date-fns/locale";
+import { enUS, ja } from "date-fns/locale";
 import { cn } from "@/lib/shadcn-utils";
 import { Calendar } from "@/components/shadcn-ui/calendar";
 
-interface Props {
+type CalendarTaskProps = {
   date: DateRange | undefined;
   onSelectedDateAction: (date: DateRange | undefined) => void;
 }
 
-export const CalendarTask = ({ date, onSelectedDateAction }: Props) => {
+export const CalendarTask = ({ date, onSelectedDateAction }: CalendarTaskProps) => {
   const lang = useLocale();
   const t = useTranslations("TASK_SHORTCUT");
 
   const currentLocale = useMemo(() => {
-    if (lang === "te") return te;
+    if (lang === "ja") return ja;
     else return enUS;
   }, [lang]);
 

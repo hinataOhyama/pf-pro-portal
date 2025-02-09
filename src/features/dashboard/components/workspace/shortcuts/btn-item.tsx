@@ -5,7 +5,7 @@ import { Loading } from "@/components/ui/loading";
 import { UserPermission } from "@prisma/client";
 import { LucideIcon } from "lucide-react";
 
-interface Props {
+type BtnItemProps = {
   title: string;
   Icon: LucideIcon;
   userRole: UserPermission | null;
@@ -19,7 +19,7 @@ export const BtnItem = ({
   userRole,
   isLoading,
   onClickAction,
-}: Props) => {
+}: BtnItemProps) => {
   return (
     <Button
       disabled={isLoading}

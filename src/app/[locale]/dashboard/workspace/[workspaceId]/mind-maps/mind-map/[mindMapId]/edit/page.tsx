@@ -8,14 +8,14 @@ import { notFound } from "next/navigation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import MindMapEditPresentation from "@/features/dashboard/components/mind-map-edit/presentation";
 
-interface Params {
+type EditMindMapParams = {
   params: Promise<{
     workspaceId: string;
     mindMapId: string;
   }>;
 }
 
-const EditMindMapPage = async (props: Params) => {
+const EditMindMapPage = async (props: EditMindMapParams) => {
   const params = await props.params;
 
   const {

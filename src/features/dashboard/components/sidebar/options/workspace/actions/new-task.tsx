@@ -8,11 +8,11 @@ import { useNewTask } from "@/features/dashboard/hooks/use-new-task";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type NewTaskProps = {
   workspaceId: string;
 }
 
-export const NewTask = ({ workspaceId }: Props) => {
+export const NewTask = ({ workspaceId }: NewTaskProps) => {
   const t = useTranslations("SIDEBAR.WORKSPACE_OPTIONS");
 
   const { newTask, isPending } = useNewTask(workspaceId);

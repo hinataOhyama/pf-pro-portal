@@ -12,12 +12,12 @@ import { AspectRatio } from "@/components/shadcn-ui/aspect-ratio";
 import Image from "next/image";
 import { cn } from "@/lib/shadcn-utils";
 
-interface Props {
+type ImagesCarouselProps = {
   className?: string;
   images: HomePageImage[];
 }
 
-export const ImagesCarousel = ({ images }: Props) => {
+export const ImagesCarousel = ({ images }: ImagesCarouselProps) => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 
   return (

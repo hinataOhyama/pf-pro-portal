@@ -15,11 +15,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/shadcn-ui
 import { AddImageByLink } from "./link";
 import { AddImageByImport } from "./import";
 
-interface Props {
+type AddImageProps = {
   editor: Editor | null;
 }
 
-export const AddImage = ({ editor }: Props) => {
+export const AddImage = ({ editor }: AddImageProps) => {
   const t = useTranslations("TASK.EDITOR");
   const [isOpen, setIsOpen] = useState(false);
 

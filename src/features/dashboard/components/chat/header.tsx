@@ -1,10 +1,10 @@
 import { useTranslations } from "next-intl";
 
-interface Props {
+type HeaderProps = {
   workspaceName: string;
 }
 
-export const Header = ({ workspaceName }: Props) => {
+export const Header = ({ workspaceName }: HeaderProps) => {
   const t = useTranslations("CHAT.HEADER");
   return (
     <div className="w-full border-b border-border shadow-sm p-4">

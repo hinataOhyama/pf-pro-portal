@@ -13,7 +13,7 @@ import { Loading } from "@/components/ui/loading";
 import { useRouter } from "@/lib/i18n";
 import { cn } from "@/lib/shadcn-utils";
 
-interface Props {
+type TagSelectorProps = {
   tags?: Tag[];
   currentActiveTags: Tag[];
   onSelectActiveTag: (id: string) => void;
@@ -43,7 +43,7 @@ export const TagSelector = ({
   plusIconSize = 16,
   dropDownSizeOffset,
   isError,
-}: Props) => {
+}: TagSelectorProps) => {
   const router = useRouter();
   return (
     <DropdownMenu>

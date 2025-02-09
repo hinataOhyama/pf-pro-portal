@@ -24,11 +24,11 @@ import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import { OptionBtn } from "./btn/option";
 
-interface Props {
+type AddLinkProps = {
   editor: Editor | null;
 }
 
-export const AddLink = ({ editor }: Props) => {
+export const AddLink = ({ editor }: AddLinkProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const form = useForm<LinkSchema>({
     resolver: zodResolver(linkSchema),

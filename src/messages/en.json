@@ -64,7 +64,7 @@
       "SIGN_IN": "You have been logged in!",
       "IMAGE_PROFILE_UPDATE": "Your profile image has been updated!",
       "IMAGE_PROFILE_DELETE": "Your profile image has been deleted!",
-      "ONBOARDING_COMPLETE": "Welcome to Super Productive!",
+      "ONBOARDING_COMPLETE": "Welcome to Pro Portal!",
       "PASSWORD_CHANGED": "Password has been changed!",
       "NEW_WORKSPACE": "The workspace has been created!",
       "TASK_DELETED": "Task has been deleted!",
@@ -141,7 +141,7 @@
     "IS_DONE": "just a moment more"
   },
   "COMMON": {
-    "WELCOMEBACK": "Welcome back",
+    "WELCOME_BACK": "Welcome back",
     "LANG_HOVER": "Change language",
     "THEME_HOVER": "Change Theme",
     "DARK": "Dark",
@@ -253,7 +253,7 @@
   "SETTINGS": {
     "ACCOUNT": {
       "TITLE": "Account",
-      "DESC": "Manage your Super Productive account. All changes to your account will be applied to all workspaces.",
+      "DESC": "Manage your Pro Portal account. All changes to your account will be applied to all workspaces.",
       "IMAGE": "PROFILE IMAGE",
       "USERNAME": "USERNAME",
       "FIRST_NAME": "FIRST NAME (OPTIONAL)",
@@ -412,8 +412,8 @@
         "NO_CONTENT": "Task without content",
         "DELETE": "Delete",
         "EDIT": "Edit",
-        "ADD_TO_FAV": "Add to favourites",
-        "REMOVE_FROM_FAV": "Remove from favourites",
+        "ADD_TO_FAV": "Add to favorites",
+        "REMOVE_FROM_FAV": "Remove from favorites",
         "CREATOR_INFO": "Created by",
         "EDITOR_INFO": "Edited by",
         "DIALOG": {
@@ -591,8 +591,8 @@
       "NEW_TASK_TEXT": "has added a new task in the workspace {name}",
       "NEW_MIND_MAP_TEXT": "has added a new mind map in the workspace {name}",
       "NEW_ROLE_TEXT": "You have been granted {role} level permissions in the workspace {name}",
-      "NEW_ASSIGMENT_TASK_TEXT": "You have been assigned a task in the workspace {name}",
-      "NEW_ASSIGMENT_MIND_MAP_TEXT": "You have been assigned to a mind map in the workspace {name}"
+      "NEW_ASSIGNMENT_TASK_TEXT": "You have been assigned a task in the workspace {name}",
+      "NEW_ASSIGNMENT_MIND_MAP_TEXT": "You have been assigned to a mind map in the workspace {name}"
     }
   },
   "WORKSPACE_MAIN_PAGE": {
@@ -647,11 +647,11 @@
     "NOTIFICATIONS": "{notifications} new messages",
     "NEW_MESSAGE": {
       "PLACEHOLDER": "New message",
-      "DELETE_ATACHMENT": "Delete attachment",
-      "ATACHMENT_DEAFULT_ERROR": "Failed to add attachments.",
-      "ATACHMENT_TO_MANY_ERROR": "Failed to add attachments. The maximum number of files you can send at once is 5 images and 5 PDFs.",
-      "ATACHMENT_TO_BIG_ERROR": "Failed to add attachments. One of the files is too large.",
-      "ATACHMENT_WRONG_FILE_ERROR": "Failed to add attachments. One of the files has an unsupported format."
+      "DELETE_ATTACHMENT": "Delete attachment",
+      "ATTACHMENT_DEFAULT_ERROR": "Failed to add attachments.",
+      "ATTACHMENT_TO_MANY_ERROR": "Failed to add attachments. The maximum number of files you can send at once is 5 images and 5 PDFs.",
+      "ATTACHMENT_TO_BIG_ERROR": "Failed to add attachments. One of the files is too large.",
+      "ATTACHMENT_WRONG_FILE_ERROR": "Failed to add attachments. One of the files has an unsupported format."
     }
   },
   "CLIENT_ERROR": {

@@ -5,13 +5,13 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useMemo } from "react";
 
-interface Props {
+type ActiveWorkspaceInfoProps = {
   workspace: Workspace;
 }
 
 export const ActiveWorkspaceInfo = ({
   workspace: { color, image, name },
-}: Props) => {
+}: ActiveWorkspaceInfoProps) => {
   const workspaceColor = useMemo(() => {
     switch (color) {
       case CustomColors.PURPLE:

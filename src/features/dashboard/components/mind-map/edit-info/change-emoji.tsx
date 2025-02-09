@@ -4,12 +4,12 @@ import { EmojiSelector } from "@/components/common/emoji-selector";
 import { useChangeCodeToEmoji } from "@/hooks/use-change-code-to-emoji";
 import { useState } from "react";
 
-interface Props {
+type ChangeEmojiProps = {
   emoji: string;
   onFormSelectAction: (emoji: string) => void;
 }
 
-export const ChangeEmoji = ({ emoji, onFormSelectAction }: Props) => {
+export const ChangeEmoji = ({ emoji, onFormSelectAction }: ChangeEmojiProps) => {
   const [selectedEmoji, setSelectedEmoji] = useState(emoji);
   const renderedEmoji = useChangeCodeToEmoji(selectedEmoji);
 

@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/shadcn-ui/badge";
 import { format } from "date-fns";
-import { te } from "date-fns/locale";
+import { ja } from "date-fns/locale";
 import { CalendarIcon } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
@@ -17,7 +17,7 @@ export const ReadonlyCalendar = ({ from, to }: ReadonlyCalendarProps) => {
   const t = useTranslations("TASK.EDITOR.READ_ONLY");
 
   const currentLocale = useMemo(() => {
-    if (lang === "te") return te;
+    if (lang === "ja") return ja;
   }, [lang]);
   return (
     <Badge

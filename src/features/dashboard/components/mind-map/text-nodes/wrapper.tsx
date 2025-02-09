@@ -23,7 +23,7 @@ import React, { useCallback, useState } from "react";
 import { Handle, Position, useReactFlow } from "reactflow";
 import { useDebouncedCallback } from "use-debounce";
 
-interface Props {
+type NodeWrapperProps = {
   nodeId: string;
   children: React.ReactNode;
   className?: string;
@@ -57,7 +57,7 @@ export const NodeWrapper = ({
   isEditing,
   onIsEditAction,
   onDeleteAction,
-}: Props) => {
+}: NodeWrapperProps) => {
   const [currColor, setCurrColor] = useState<MindMapItemColors | undefined>(
     color
   );
@@ -127,7 +127,7 @@ export const NodeWrapper = ({
       case MindMapItemColors.PINK:
         return "!bg-pink-600 hover:bg-pink-500 text-white";
       case MindMapItemColors.YELLOW:
-        return "!bg-yello-600 hover:bg-yellow-500 text-white";
+        return "!bg-yellow-600 hover:bg-yellow-500 text-white";
       default:
         return "!bg-secondary hover:bg-secondary-500";
     }

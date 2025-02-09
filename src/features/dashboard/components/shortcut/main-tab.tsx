@@ -9,7 +9,7 @@ import { ActiveWorkspaceInfo } from "./active-workspace-info";
 import { useTranslations } from "next-intl";
 import { Warning } from "@/components/ui/warning";
 
-interface Props {
+type MainTabProps = {
   renderedEmoji: string | string[];
   activeWorkspace: Workspace | null;
   date: DateRange | undefined;
@@ -29,7 +29,7 @@ export const MainTab = ({
   onChangeTitleAction,
   onSelectEmojiAction,
   onSelectedDateAction,
-}: Props) => {
+}: MainTabProps) => {
   const t = useTranslations("TASK_SHORTCUT.MAIN_TAB");
 
   if (!activeWorkspace) {

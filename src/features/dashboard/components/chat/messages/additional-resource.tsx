@@ -7,13 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-interface Props {
+type AdditionalResourceProps = {
   file: AdditionalResourceType;
 }
 
 export const AdditionalResource = ({
   file: { name, type, url },
-}: Props) => {
+}: AdditionalResourceProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (

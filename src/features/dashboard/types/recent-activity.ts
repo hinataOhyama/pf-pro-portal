@@ -6,19 +6,19 @@ import {
 } from "./assigned-to";
 import { UserInfo } from "./info";
 
-export interface HomeRecentActivity extends AssignedToMeDataItem {
+export type HomeRecentActivity = {
   starred: boolean;
-}
+} & AssignedToMeDataItem;
 
 export type HomeRecentTasksAndMindMapsActivity = AssignedToMeTaskAndMindMaps;
 
-export interface WorkspaceRecentActivityTagItem {
+export type WorkspaceRecentActivityTagItem = {
   id: string;
   name: string;
   color: CustomColors;
 }
 
-export interface WorkspaceRecentActivityAssignedToItem {
+export type WorkspaceRecentActivityAssignedToItem = {
   user: {
     id: string;
     image: string | null;
@@ -30,7 +30,7 @@ export interface WorkspaceRecentActivityAssignedToItem {
   taskId?: string;
 }
 
-export interface WorkspaceRecentActivity {
+export type WorkspaceRecentActivity = {
   id: string;
   title: string;
   emoji: string;
@@ -45,7 +45,7 @@ export interface WorkspaceRecentActivity {
   link: string;
 }
 
-export interface AssignedToMeTaskAndMindMapsWorkspaceRecentActivity {
+export type AssignedToMeTaskAndMindMapsWorkspaceRecentActivity = {
   tasks: WorkspaceRecentActivity[];
   mindMaps: WorkspaceRecentActivity[];
 }

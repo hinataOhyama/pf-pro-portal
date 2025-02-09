@@ -8,14 +8,14 @@ import axios from "axios";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
-interface Props {
+type EmojiProps = {
   onFormSelectAction: (emoji: string) => void;
   emoji: string;
   taskId: string;
   workspaceId: string;
 }
 
-export const Emoji = ({ onFormSelectAction, emoji, taskId, workspaceId }: Props) => {
+export const Emoji = ({ onFormSelectAction, emoji, taskId, workspaceId }: EmojiProps) => {
   const [selectedEmoji, setSelectedEmoji] = useState(emoji);
   const { status, onSetStatus } = useAutosaveIndicator();
   const renderedEmoji = useChangeCodeToEmoji(selectedEmoji);

@@ -12,11 +12,11 @@ import { Button } from "@/components/shadcn-ui/button";
 import { Loading } from "@/components/ui/loading";
 import { useState } from "react";
 
-interface Props {
+type AddImageByImportProps = {
   onAddImageAction: (link: string) => void;
 }
 
-export const AddImageByImport = ({ onAddImageAction }: Props) => {
+export const AddImageByImport = ({ onAddImageAction }: AddImageByImportProps) => {
   const t = useTranslations("TASK.EDITOR.IMAGE.UPLOAD_TAB");
   const m = useTranslations("MESSAGES");
   const [isLoading, setIsLoading] = useState(false);

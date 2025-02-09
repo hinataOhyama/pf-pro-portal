@@ -6,13 +6,13 @@ import { notFound } from "next/navigation";
 import { checkCompletedOnboarding } from "@/features/onboarding/lib/check-completed";
 import WorkspacePresentation from "@/features/dashboard/components/workspace/presentation";
 
-interface Params {
+type WorkspaceParams = {
   params: Promise<{
     workspaceId: string;
   }>;
 }
 
-const Workspace = async (props: Params) => {
+const Workspace = async (props: WorkspaceParams) => {
   const params = await props.params;
 
   const {

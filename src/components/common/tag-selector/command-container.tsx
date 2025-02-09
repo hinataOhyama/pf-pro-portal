@@ -15,7 +15,7 @@ import { CustomColors, Tag } from "@prisma/client";
 import { useTranslations } from "next-intl";
 import { CreateNewTagOrEditTag } from "./create-new-or-edit-tag";
 
-interface Props {
+type CommandContainerProps = {
   tags?: Tag[];
   currentActiveTags: Tag[];
   onSelectActiveTag: (id: string) => void;
@@ -35,7 +35,7 @@ export const CommandContainer = ({
   workspaceId,
   onUpdateActiveTags,
   onDeleteActiveTag,
-}: Props) => {
+}: CommandContainerProps) => {
   const [tab, setTab] = useState<"list" | "newTag" | "editTag">("list");
   const [editedTagInfo, setEditedTagInfo] = useState<null | Tag>(null);
   const t = useTranslations("TASK.HEADER.TAG");

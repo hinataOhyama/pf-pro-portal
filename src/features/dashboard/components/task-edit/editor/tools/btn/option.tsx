@@ -7,12 +7,15 @@ import {
 import { cn } from "@/lib/shadcn-utils";
 import { forwardRef } from "react";
 
-export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export type OptionBtnProps = {
   hoverText: string;
-}
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const OptionBtn = forwardRef<HTMLButtonElement, Props>(
-  ({ onClick, children, className, hoverText, ...props }: Props, ref) => {
+const OptionBtn = forwardRef<HTMLButtonElement, OptionBtnProps>(
+  (
+    { onClick, children, className, hoverText, ...props }: OptionBtnProps,
+    ref
+  ) => {
     return (
       <HoverCard openDelay={250} closeDelay={250}>
         <HoverCardTrigger asChild>

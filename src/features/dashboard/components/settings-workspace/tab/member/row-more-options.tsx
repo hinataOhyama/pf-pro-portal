@@ -30,7 +30,7 @@ import axios from "axios";
 import { AxiosError } from "axios";
 import { Loading } from "@/components/ui/loading";
 
-interface Props {
+type RowMoreOptionsProps = {
   userRole: UserPermissionType;
   userId: string;
   workspaceId: string;
@@ -44,7 +44,7 @@ export const RowMoreOptions = ({
   userId,
   workspaceId,
   onSetworkspacesubscribersAction,
-}: Props) => {
+}: RowMoreOptionsProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const t = useTranslations("EDIT_WORKSPACE.MEMBERS.OPTIONS");

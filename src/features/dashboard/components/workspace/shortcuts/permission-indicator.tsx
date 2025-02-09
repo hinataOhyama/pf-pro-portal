@@ -16,12 +16,12 @@ import { Button } from "@/components/shadcn-ui/button";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type PermissionIndicatorProps = {
   userRole: UserPermission | null;
   workspaceName: string;
 }
 
-export const PermissionIndicator = ({ userRole, workspaceName }: Props) => {
+export const PermissionIndicator = ({ userRole, workspaceName }: PermissionIndicatorProps) => {
   const userRoleEmojis = useChangeCodeToEmoji(
     "1f432",
     "1f60e",

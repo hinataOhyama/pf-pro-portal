@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ActiveLink } from "@/components/ui/active-link";
 import { changeCodeToEmoji } from "@/lib/change-code-to-emoji";
 
-interface Props {
+type WorkspaceOptionProps = {
   workspaceId: string;
   children: React.ReactNode;
   defaultName: string;
@@ -24,7 +24,7 @@ export const WorkspaceOption = ({
   fields,
   href,
   defaultName,
-}: Props) => {
+}: WorkspaceOptionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

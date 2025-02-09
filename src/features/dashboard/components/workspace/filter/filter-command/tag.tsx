@@ -7,12 +7,12 @@ import { CustomColors, Tag as TagType } from "@prisma/client";
 import { Check, Tag } from "lucide-react";
 import { useMemo } from "react";
 
-interface Props {
+type CommandTagItemProps = {
   tag: TagType;
   active: boolean;
 }
 
-export const CommandTagItem = ({ tag: { color, id, name }, active }: Props) => {
+export const CommandTagItem = ({ tag: { color, id, name }, active }: CommandTagItemProps) => {
   const { onChangeFilterTags } = useFilterByUsersAndTagsInWorkspace();
   const tagColor = useMemo(() => {
     switch (color) {

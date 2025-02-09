@@ -4,12 +4,12 @@ import { MAX_USER_WORKSPACES } from "@/constants/workspace";
 import { cn } from "@/lib/shadcn-utils";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type CreatedWorkspacesInfoProps = {
   className?: string;
   createdNumber: number;
 }
 
-export const CreatedWorkspacesInfo = ({ className, createdNumber }: Props) => {
+export const CreatedWorkspacesInfo = ({ className, createdNumber }: CreatedWorkspacesInfoProps) => {
   const t = useTranslations("COMMON");
 
   return (

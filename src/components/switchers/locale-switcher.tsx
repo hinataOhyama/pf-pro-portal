@@ -57,7 +57,7 @@ export const LocaleSwitcher = ({
         <DropdownMenuContent align={alignDropdown}>
           <DropdownMenuItem
             onClick={() => {
-              onSelectChange("te");
+              onSelectChange("ja");
             }}
             className="cursor-pointer"
           >

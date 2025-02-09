@@ -8,17 +8,17 @@ import { useTruncateText } from "@/hooks/use-truncate-text";
 import { FilterUser } from "@/features/dashboard/types/info";
 import { useTranslations } from "next-intl";
 
-interface Props extends FilterUser {
+type CommandUserItemProps = {
   sessionUserId: string;
   active: boolean;
-}
+} & FilterUser;
 
 export const CommandUserItem = ({
   sessionUserId,
   username,
   id,
   image,
-}: Props) => {
+}: CommandUserItemProps) => {
   const text = useTruncateText(username, 25);
   const { onChangeAssignedUser } = useFilterByUsersAndTagsInWorkspace();
   const t = useTranslations("WORKSPACE_MAIN_PAGE.COMMAND");

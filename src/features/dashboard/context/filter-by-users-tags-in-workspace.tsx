@@ -11,11 +11,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "@/lib/i18n";
 
-interface Props {
+type FilterByUsersAndTagsInWorkspaceProviderProps = {
   children: React.ReactNode;
 }
 
-interface FilterByUsersAndTagsInWorkspaceContext {
+type FilterByUsersAndTagsInWorkspaceContext = {
   isLoading: boolean;
   isError: boolean;
   allTags: Tag[] | undefined;
@@ -34,7 +34,7 @@ export const FilterByUsersAndTagsInWorkspaceCtx =
 
 export const FilterByUsersAndTagsInWorkspaceProvider = ({
   children,
-}: Props) => {
+}: FilterByUsersAndTagsInWorkspaceProviderProps) => {
   const params = useParams();
   const router = useRouter();
   const searchParams = useSearchParams();

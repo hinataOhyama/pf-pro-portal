@@ -20,11 +20,11 @@ import { DoorOpen } from "lucide-react";
 import { Warning } from "@/components/ui/warning";
 import { Loading } from "@/components/ui/loading";
 
-interface Props {
+type LeaveWorkspaceProps = {
   workspace: Workspace;
 }
 
-export const LeaveWorkspace = ({ workspace: { id, name } }: Props) => {
+export const LeaveWorkspace = ({ workspace: { id, name } }: LeaveWorkspaceProps) => {
   const [open, setOpen] = useState(false);
 
   const t = useTranslations("LEAVE_FROM_WORKSPACE");

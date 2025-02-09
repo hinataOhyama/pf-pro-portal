@@ -3,14 +3,14 @@
 import { UserAvatar } from "@/components/ui/user-avatar";
 import { useTruncateText } from "@/hooks/use-truncate-text";
 
-interface Props {
+type UserStatusProps = {
   image: string | null;
   username: string;
   maxText?: number;
   active?: boolean;
 }
 
-export const UserStatus = ({ image, username, maxText, active }: Props) => {
+export const UserStatus = ({ image, username, maxText, active }: UserStatusProps) => {
   const name = useTruncateText(username, maxText!);
   return (
     <div

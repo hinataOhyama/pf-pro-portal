@@ -12,7 +12,7 @@ export const Header = () => {
         ref={ref}
         className="font-bold text-5xl sm:text-6xl lg:text-8xl max-w-2xl text-center"
       >
-        Your Ultimate Productive App
+        Your Ultimate Portal App
       </h1>
       <div className="w-full flex flex-wrap items-center justify-center mt-12 gap-2 sm:gap-4">
         {homePageHeaderLinks.map((link, i) => (

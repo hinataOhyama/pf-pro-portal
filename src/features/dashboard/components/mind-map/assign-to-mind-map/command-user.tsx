@@ -11,13 +11,13 @@ import { Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-interface Props {
+type CommandUserProps = {
   user: AssignedToMindMapUser;
   mindMapId: string;
   workspaceId: string;
 }
 
-export const CommandUser = ({ user, mindMapId, workspaceId }: Props) => {
+export const CommandUser = ({ user, mindMapId, workspaceId }: CommandUserProps) => {
   const [isActiveUser, setIsActiveUser] = useState(
     user.user.assignedToMindMap.length === 1 ? true : false
   );

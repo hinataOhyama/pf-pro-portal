@@ -4,7 +4,7 @@ import { HomePageImage } from "@/constants/home";
 import { ImagesCarousel } from "../carousel";
 import { useIsVisible } from "@/hooks/use-is-visible";
 
-interface Props {
+type SectionProps = {
   reverse?: boolean;
   title: string;
   desc: string;
@@ -12,7 +12,7 @@ interface Props {
   id?: string;
 }
 
-export const Section = ({ reverse, title, desc, images, id }: Props) => {
+export const Section = ({ reverse, title, desc, images, id }: SectionProps) => {
   const { isVisible, ref } = useIsVisible();
   return (
     <section

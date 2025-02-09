@@ -19,7 +19,7 @@ import { LoadMoreMessages } from "./load-more-messages";
 import { MessageSquare } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface Props {
+type MessagesContainerProps = {
   chatId: string;
   sessionUserId: string;
 }
@@ -27,7 +27,7 @@ interface Props {
 export const MessagesContainer = ({
   chatId,
   sessionUserId,
-}: Props) => {
+}: MessagesContainerProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [userScrolled, setUserScrolled] = useState(false);
