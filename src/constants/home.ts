@@ -1,15 +1,9 @@
-import {
-  CalendarDays,
-  Clock,
-  MessageSquare,
-  PencilRuler,
-  Workflow,
-} from "lucide-react";
+import { MessageSquare, PencilRuler, Workflow } from "lucide-react";
 
 export type HomePageImage = {
   src: string;
   alt: string;
-}
+};
 
 export const homePageMindMapsImgs: HomePageImage[] = [
   {
@@ -150,19 +144,9 @@ export const homePageHeaderLinks = [
     title: "Mind Maps",
   },
   {
-    href: "Calendar",
-    Icon: CalendarDays,
-    title: "Calendar",
-  },
-  {
     href: "Chat",
     Icon: MessageSquare,
     title: "Group Chat",
-  },
-  {
-    href: "Pomodoro",
-    Icon: Clock,
-    title: "Pomodoro",
   },
 ];
 
@@ -174,21 +158,5 @@ export const navLinks = [
   {
     title: "Tasks",
     href: "Tasks",
-  },
-  {
-    href: "Calendar",
-    title: "Integrated Calendar",
-  },
-  {
-    href: "Chat",
-    title: "Chat & notifications",
-  },
-  {
-    href: "Pomodoro",
-    title: "Pomodoro",
-  },
-  {
-    href: "Roles",
-    title: "Roles & Settings",
   },
 ];
