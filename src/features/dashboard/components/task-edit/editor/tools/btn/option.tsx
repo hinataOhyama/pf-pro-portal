@@ -12,11 +12,12 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const OptionBtn = forwardRef<HTMLButtonElement, Props>(
-  ({ onClick, children, className, hoverText, ...props }: Props) => {
+  ({ onClick, children, className, hoverText, ...props }: Props, ref) => {
     return (
       <HoverCard openDelay={250} closeDelay={250}>
         <HoverCardTrigger asChild>
           <Button
+            ref={ref}
             className={cn(
               "w-7 h-7 flex justify-center items-center rounded-sm text-muted-foreground",
               className

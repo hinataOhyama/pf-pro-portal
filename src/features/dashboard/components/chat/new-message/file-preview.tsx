@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/shadcn-ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import { useTruncateText } from "@/hooks/useTruncateText";
-import { AdditionalResource } from "@/types/extended";
+} from "@/components/shadcn-ui/hover-card";
+import { useTruncateText } from "@/hooks/use-truncate-text";
+import { AdditionalResource } from "@/features/dashboard/types/chat";
 import { AdditionalResourceTypes } from "@prisma/client";
 import { FileText, Trash } from "lucide-react";
 import { useTranslations } from "next-intl";

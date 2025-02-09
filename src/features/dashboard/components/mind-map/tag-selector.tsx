@@ -89,7 +89,7 @@ export const MindMapTagsSelector = ({
           {t("TAG")}
         </HoverCardContent>
       </HoverCard>
-      {currentActiveTags.length > 0 && (
+      {currentActiveTags?.length > 0 && (
         <ScrollArea className="hidden sm:block max-w-[15rem] md:max-w-[24rem]">
           <div className="flex w-max space-x-2 py-2">
             {currentActiveTags.map((tag) => (

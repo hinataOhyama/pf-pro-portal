@@ -1,9 +1,7 @@
-"use client";
-
-import { HomeContainer } from "./_components";
+import { HomePresentation } from "@/features/home/components/presentation";
 
 const HomePage = () => {
-  return <HomeContainer />;
+  return <HomePresentation />;
 };
 
 export default HomePage;

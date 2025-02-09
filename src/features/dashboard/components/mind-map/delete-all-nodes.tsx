@@ -47,7 +47,7 @@ export const DeleteAllNodes = ({ workspaceId, mindMapId }: Props) => {
       onSetStatus("saved");
       setNodes([]);
       toast({
-        title: t("MESSAGE.SUCCES"),
+        title: t("MESSAGE.SUCCESS"),
       });
       setOpen(false);
     },
@@ -63,7 +63,7 @@ export const DeleteAllNodes = ({ workspaceId, mindMapId }: Props) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <HoverCard openDelay={250} closeDelay={250}>
-        <DialogTrigger>
+        <DialogTrigger asChild>
           <Button
             disabled={!getNodes().length || status !== "saved"}
             onClick={() => setOpen(true)}

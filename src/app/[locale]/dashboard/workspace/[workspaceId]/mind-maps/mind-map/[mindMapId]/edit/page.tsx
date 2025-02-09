@@ -10,22 +10,22 @@ import MindMapEditPresentation from "@/features/dashboard/components/mind-map-ed
 
 interface Params {
   params: {
-    workspace_id: string;
-    mind_map_id: string;
+    workspaceId: string;
+    mindMapId: string;
   };
 }
 
 const EditMindMapPage = async ({
-  params: { workspace_id, mind_map_id },
+  params: { workspaceId, mindMapId },
 }: Params) => {
   const session = await checkCompletedOnboarding(
-    `/dashboard/workspace/${workspace_id}/tasks/task/${mind_map_id}`
+    `/dashboard/workspace/${workspaceId}/tasks/task/${mindMapId}`
   );
 
   const [workspace, userRole, mindMap] = await Promise.all([
-    getWorkspace(workspace_id, session!.user.id),
-    getUserWorkspaceRole(workspace_id, session!.user.id),
-    getMindMap(mind_map_id, session!.user.id),
+    getWorkspace(workspaceId, session!.user.id),
+    getUserWorkspaceRole(workspaceId, session!.user.id),
+    getMindMap(mindMapId, session!.user.id),
   ]);
 
   if (!workspace || !userRole || !mindMap) notFound();
@@ -33,14 +33,13 @@ const EditMindMapPage = async ({
   const canEdit = userRole === "ADMIN" || userRole === "OWNER" ? true : false;
   if (!canEdit)
     redirect({
-      href: `/dashboard/workspace/${workspace_id}/tasks/task/${mind_map_id}`,
+      href: `/dashboard/workspace/${workspaceId}/tasks/task/${mindMapId}`,
       locale: "en",
     });
 
   return (
     <MindMapEditPresentation
       workspace={workspace}
-      workspaceId={workspace_id}
       userRole={userRole}
       session={session}
       mindMap={mindMap}

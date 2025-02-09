@@ -32,7 +32,7 @@ export const ShortcutContainer = ({ workspace, userRole }: Props) => {
           userRole={userRole}
           Icon={MessagesSquare}
           title="Group chat"
-          href={`/dashboard/workspace/${workspace.id}/chat/${workspace.conversation.id}`}
+          href={`/dashboard/workspace/${workspace.id}/chat/${workspace.conversation?.id}`}
         />
         <BtnItem
           userRole={userRole}

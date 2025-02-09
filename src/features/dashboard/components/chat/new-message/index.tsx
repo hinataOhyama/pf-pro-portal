@@ -86,7 +86,7 @@ export const NewMessageContainer = ({ chatId }: Props) => {
     },
     onSuccess: async () => {
       toast({
-        title: m("SUCCES.TASK_ADDED"),
+        title: m("SUCCESS.TASK_ADDED"),
       });
     },
     onError: (err: AxiosError) => {
