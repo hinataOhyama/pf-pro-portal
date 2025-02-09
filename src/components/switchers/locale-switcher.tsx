@@ -61,7 +61,7 @@ export const LocaleSwitcher = ({
             }}
             className="cursor-pointer"
           >
-            TE
+            JA
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => {

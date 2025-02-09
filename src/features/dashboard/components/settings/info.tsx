@@ -53,7 +53,7 @@ const languages = [
     value: "en",
   },
   {
-    label: "Telugu",
+    label: "Japanese",
     value: "ja",
   },
 ] as const;

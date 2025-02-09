@@ -125,7 +125,7 @@ export const User = ({ profileImage, username, email }: UserProps) => {
                   }}
                   className="flex justify-between items-center cursor-pointer"
                 >
-                  <span>Telugu</span>
+                  <span>Japanese</span>
                   {lang === "ja" && <Check size={14} />}
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
